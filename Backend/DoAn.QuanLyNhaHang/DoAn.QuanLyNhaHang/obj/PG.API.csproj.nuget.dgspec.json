@@ -1,0 +1,211 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj": {}
+  },
+  "projects": {
+    "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj",
+        "projectName": "PG.Core",
+        "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj",
+        "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
+        "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj",
+        "projectName": "PG.Infrastructure",
+        "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
+        "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj": {
+                "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj",
+        "projectName": "PG.API",
+        "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj",
+        "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
+        "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj": {
+                "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj"
+              },
+              "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj": {
+                "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\bin\Debug\net6.0\DoAn.Infrastructure.deps.json
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\bin\Debug\net6.0\DoAn.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\bin\Debug\net6.0\DoAn.Infrastructure.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\bin\Debug\net6.0\DoAn.Core.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\bin\Debug\net6.0\DoAn.Core.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.csproj.AssemblyReference.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.AssemblyInfoInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.AssemblyInfo.cs
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.csproj.CoreCompileInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.csproj.CopyComplete
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\refint\DoAn.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\DoAn.Infrastructure.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\ref\DoAn.Infrastructure.dll

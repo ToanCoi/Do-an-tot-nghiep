@@ -1,0 +1,14 @@
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\bin\Debug\net6.0\DoAn.Core.deps.json
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\bin\Debug\net6.0\DoAn.Core.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\bin\Debug\net6.0\DoAn.Core.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.csproj.AssemblyReference.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.Properties.Resources.resources
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.csproj.GenerateResource.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.AssemblyInfoInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.AssemblyInfo.cs
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.csproj.CoreCompileInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\refint\DoAn.Core.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\DoAn.Core.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\Core\obj\Debug\net6.0\ref\DoAn.Core.dll
