@@ -1,0 +1,287 @@
+.nav-wrapper {
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: #393a3d;
+}
+
+.nav-bar {
+    width: 178px;
+    overflow: hidden;
+}
+
+.nav__header {
+    display: flex;
+    height: 48px;
+    width: var(--nav-width);
+    align-items: center;
+    padding-left: 24px;
+}
+
+.nav__toggle {
+    margin-left: 0px !important;
+}
+
+.page-icon .nav__icon-toggle {
+    cursor: pointer;
+}
+
+.logo img {
+    width: 96px;
+    height: 32px;
+    padding-left: 14px;
+}
+
+.nav__list {
+    padding-top: 14px;
+}
+
+.page-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.nav__list-item {
+    display: flex;
+    height: 42px;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav__list-item .page-icon {
+    margin-left: 9px;
+}
+
+.nav__list-item .page-icon {
+    padding-right: 14px;
+}
+
+.nav__list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border-left-color: rgba(255, 255, 255, 0.01); */
+}
+
+.nav__list-item::before {
+    content: "";
+    width: 6px;
+    height: 42px;
+}
+
+.nav__item-selected {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* border-left-color:  #2ca01c !important; */
+    font-weight: 700;
+}
+
+.nav__item-selected::before {
+    content: "";
+    width: 6px;
+    height: 42px;
+    float: left;
+    background-color: #2ca01c;
+    left: 0;
+    top: 0;
+}
+
+/* Trạng thái small */
+.nav-small {
+    --nav-width: 52px;
+}
+
+.nav-small .nav__header {
+    padding-left: 0px;
+    justify-content: center;
+}
+
+/* icon */
+.nav__icon-option {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -428px -92px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-toggle {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -316px -37px;
+	width: 16px;
+	height: 14px;
+}
+
+.nav__icon-dashboard {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -33px -1630px;
+	width: 18px;
+	height: 20px;
+}
+
+.nav__icon-dashboard-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -33px -1587px;
+	width: 18px;
+	height: 20px;
+}
+
+.nav__icon-cash {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -78px -1631px;
+	width: 14px;
+	height: 18px;
+}
+
+.nav__icon-cash-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -78px -1588px;
+	width: 14px;
+	height: 18px;
+}
+
+.nav__icon-deposit {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -121px -1633px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-deposit-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -121px -1590px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-purchase {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -165px -1632px;
+	width: 16px;
+	height: 18px;
+}
+
+.nav__icon-purchase-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -165px -1589px;
+	width: 16px;
+	height: 18px;
+}
+
+.nav__icon-sale {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -206px -1631px;
+	width: 20px;
+	height: 18px;
+}
+
+.nav__icon-sale-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -206px -1588px;
+	width: 20px;
+	height: 18px;
+}
+
+.nav__icon-invoice {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -254px -1632px;
+	width: 14px;
+	height: 17px;
+}
+
+.nav__icon-invoice-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -254px -1589px;
+	width: 14px;
+	height: 17px;
+}
+
+.nav__icon-stock {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -294px -1632px;
+	width: 18px;
+	height: 17px;
+}
+
+.nav__icon-stock-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -294px -1589px;
+	width: 18px;
+	height: 17px;
+}
+
+.nav__icon-tools {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -339px -1633px;
+	width: 18px;
+	height: 17px;
+}
+
+.nav__icon-tools-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -339px -1590px;
+	width: 18px;
+	height: 17px;
+}
+
+.nav__icon-assets {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -382px -1632px;
+	width: 17px;
+	height: 18px;
+}
+
+.nav__icon-assets-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -382px -1589px;
+	width: 17px;
+	height: 18px;
+}
+
+.nav__icon-tax {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -427px -1634px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-tax-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -427px -1591px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-price {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -471px -1633px;
+	width: 17px;
+	height: 17px;
+}
+
+.nav__icon-price-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -471px -1590px;
+	width: 17px;
+	height: 17px;
+}
+
+.nav__icon-general {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -514px -1632px;
+	width: 16px;
+	height: 18px;
+}
+
+.nav__icon-general-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -514px -1590px;
+	width: 15px;
+	height: 16px;
+}
+
+.nav__icon-budget {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -552px -1636px;
+	width: 14px;
+	height: 13px;
+}
+
+.nav__icon-budget-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -427px -1664px;
+	width: 16px;
+	height: 16px;
+}
+
+.nav__icon-report {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -552px -1636px;
+	width: 14px;
+	height: 13px;
+}
+
+.nav__icon-report-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -552px -1593px;
+	width: 14px;
+	height: 13px;
+}
+
+.nav__icon-finance {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -207px -1667px;
+	width: 17px;
+	height: 14px;
+}
+
+.nav__icon-finance-active {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -251px -1667px;
+	width: 17px;
+	height: 14px;
+}

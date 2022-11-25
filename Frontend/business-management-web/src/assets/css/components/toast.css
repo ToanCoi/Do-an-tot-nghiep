@@ -1,0 +1,76 @@
+.toast {
+    height: 48px;
+    background-color: #fff;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 0 16px;
+    width: 250px;
+    z-index: 1000;
+}
+
+.toast__content {
+    color: #000;
+    font-size: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.toast__cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+}
+
+.toast__cancel:hover {
+    opacity: 0.6;
+}
+
+.toast__cancel:active {
+    opacity: 1;
+}
+
+.success {
+    color: #2ca01c;
+}
+
+.info {
+    color: #4388d9;
+}
+
+.warning {
+    color: #f1c04e;
+}
+
+.danger {
+    color: #eb5757;
+}
+
+/* icon */
+.toast__icon-cancel {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -1178px -362px;
+	width: 12px;
+	height: 12px;
+}
+
+.toast__icon-success {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -1602px -258px;
+	width: 20px;
+	height: 20px;
+}
+
+.toast__icon-warning {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -593px -145px;
+	width: 22px;
+	height: 23px;
+}
+
+.toast__icon-danger {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -762px -146px;
+	width: 20px;
+	height: 20px;
+}

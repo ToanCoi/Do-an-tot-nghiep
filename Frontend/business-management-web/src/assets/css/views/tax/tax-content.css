@@ -1,0 +1,120 @@
+.group-grid {
+    width: 100%;
+    height: calc(100vh - var(--header-height) - 63px - 60px - 20px);
+}
+
+.table-tax {
+    justify-content: flex-start;
+}
+
+.table-tax .paging__left {
+    display: none;
+}
+
+.table-tax .paging__right {
+    flex-direction: row-reverse;
+}
+
+.table-tax .paging .dropdown {
+    margin-left: 20px;
+}
+
+.table-employee {
+    border-top: 1px solid #929394;
+    position: relative;
+}
+
+.table-employee-expand {
+    border: none;
+}
+
+.table-employee-expand .btn-resize {
+    display: none;
+}
+
+.table-employee__header svg:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.btn-resize {
+    position: absolute;
+    cursor: n-resize;
+    top: -11px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-resize-active {
+    padding: 60px 0px;
+    top: -71px; 
+}
+
+.table-employee__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-employee .header__name {
+    display: block;
+    font-size: 18px;
+    padding: 15px 0px;
+}
+
+.table-employee .header__icon {
+    padding-right: 15px;
+}
+
+.header__icon-expand, .header__icon-compress {
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+/* popup */
+.popup__wrapper .popup-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+/* Chế độ view dọc */
+.horizontal-view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.horizontal-view .table-tax {
+    width: 49%;
+    height: 100%;
+}
+
+.horizontal-view .table-tax .grid,
+.horizontal-view .table-employee .grid {
+    height: 100% !important;
+}
+
+.horizontal-view .table-tax .table,
+.horizontal-view .table-employee .table {
+    height: calc(100% - 46px) !important;
+}
+
+.horizontal-view .table-employee {
+    border-top: none;
+    width: 49%;
+}
+
+.horizontal-view .table-employee__header,
+.horizontal-view .btn-resize {
+    display: none;
+}
+
+/* icon */
+.icon-resize {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -1842px -352px;
+	width: 16px;
+	height: 16px;
+}

@@ -1,0 +1,124 @@
+form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 201;
+    height: 100vh;
+}
+
+.form {
+    background-color: #fff;
+    border-radius: 2px;
+    animation: expand .4s;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* header form */
+.form__title {
+    display: flex;
+    justify-content: space-between;
+    height: 73px;
+}
+
+.form__title-left {
+    display: flex;
+    align-items: center;
+    padding: 20px 12px 20px 20px;
+}
+
+.form__title-text {
+    font-size: 20px;
+}
+
+.selectBox {
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.selectBox span {
+    margin: 0 10px;
+}
+
+.form__title-right {
+    padding: 12px;
+}
+
+.page-icon {
+    margin-left: 6px;
+}
+
+/* content form */
+.form__content {
+    padding: 0 20px;
+}
+
+.form-group {
+    padding-bottom: 32px;
+}
+
+.form-row .form-col:not(:last-child) {
+    margin-right: 26px;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.form-item {
+    margin-right: 10px;
+}
+
+/* footer form */
+.form__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* popup */
+.popup__wrapper .popup-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+.popup-confirm .btn-primary,
+.form__footer .btn-primary {
+    margin-left: 16px;
+}
+
+.popup-error .footer__btn {
+    width: 100%;
+}
+/* icon */
+.form__icon-help {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -89px -145px;
+	width: 22px;
+	height: 22px;
+}
+
+.form__icon-cancel {
+    background: url('../../../images/times-solid.svg') no-repeat -3px -3px;
+	width: 14px;
+	height: 14px;
+    opacity: 0.8;
+}
+
+

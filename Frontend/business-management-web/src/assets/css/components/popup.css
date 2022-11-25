@@ -1,0 +1,52 @@
+.popup__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 202;
+}
+
+.popup {
+    width: 444px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 32px;
+}
+
+.popup__content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup__footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* icon */
+.popup__icon-confirm {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -832px -462px;
+	width: 36px;
+	height: 36px;
+}
+
+.popup__icon-warning {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -598px -463px;
+	width: 36px;
+	height: 37px;
+}
+
+.popup__icon-danger {
+    background: url('../../images/Sprites.64af8f61.svg') no-repeat -752px -462px;
+	width: 36px;
+	height: 36px;
+}

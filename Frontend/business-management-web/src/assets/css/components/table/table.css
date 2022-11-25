@@ -1,0 +1,239 @@
+.grid {
+    position: relative;
+}
+
+.table {
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: relative;
+}
+
+thead tr {
+    height: 42px;
+    background-color: #e9f1ff;
+    font-family: 'Notosans-semibold';
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+tbody tr {
+    height: 42px;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+}
+
+td {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ececec;
+    white-space: nowrap;
+}
+
+/* td:not(:last-child, :nth-last-child(2)) {
+    border-right: 1px dotted #c7c7c7;
+}
+
+thead td:not(:last-child, :nth-last-child(2)) {
+    border-right: 1px solid #c7c7c7;
+} */
+
+.select-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #afafaf;
+    background: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s;
+}
+
+.col-function {
+    position: sticky;
+    right: 0;
+    /* border-left: 1px dotted #c7c7c7; */
+    min-width: 100px;
+    
+}
+
+.col-selectBox {
+    position: sticky;
+    left: 0;
+}
+
+thead .col-function {
+    /* border-left: 1px solid #c7c7c7; */
+}
+
+thead .col-function, thead .col-selectBox {
+    background-color: #e9f1ff;
+}
+
+tbody .col-function, tbody .col-selectBox {
+    background-color: #fff;
+}
+
+/* editable */
+.cell-editable {
+    border: 1px solid #d4d4d4;
+    padding: 5px;
+    width: 100px;
+    cursor: text;
+    outline: none;
+    border-radius: 2px;
+    text-align: right;
+}
+
+.cell-editable-invalid {
+    border-color: red;
+}
+
+[contenteditable="true"].single-line {
+    white-space: nowrap;
+    overflow: hidden;
+} 
+[contenteditable="true"].single-line br {
+    display:none;
+
+}
+[contenteditable="true"].single-line * {
+    display:inline;
+    white-space:nowrap;
+}
+/* function cell with dropdown */
+.function-cell {
+    color: #0075c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.function-cell span {
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.function-cell span:active {
+    border: 1px solid #0075c0;
+}
+
+.function-cell .page-icon {
+    width: 16px;
+    height: 16px;
+    padding: 0 5px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+}
+
+
+.function-cel__dropdown {
+    position: relative;
+}
+
+.dropdown-function {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    right: 0;
+    height: fit-content;
+    overflow: visible;
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 3px 0;
+    border: 1px solid #babec5;
+    transition: 0s;
+}
+
+.dropdown-function__item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-function__item:hover {
+    background-color: #e8e9ec;
+    color: #6192dc;
+} 
+
+.test {
+    position: absolute;
+    width: 100px;
+    background-color: tomato;
+    height: 100px;
+}
+
+.z-index-3 {
+    z-index: 3 !important;
+}
+
+/* active */
+tbody tr:hover td {
+    background-color: #f3f8f8;
+}
+
+.data-empty {
+    height: calc(100% - 46px);
+}
+
+.data-empty__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-empty__content span {
+    opacity: 0.5;
+}
+
+.tr-selected {
+    background-color: #f8f8f8 !important;
+}
+
+.box-selected {
+    border-color: #0075c0;
+}
+
+.dropdown-icon-select {
+    border: 1px solid #0075c0 !important;
+}
+/* row summary */
+.row-summary {
+    position: sticky;
+    bottom: 0;
+    background-color: #eceef1;
+}
+
+.row-summary:hover {
+    background-color: #eceef1 !important;
+}
+/* icon */
+.table__icon-row-select {
+    background: url('../../../images/check-blue.svg') no-repeat -7px -5px;
+	width: 11px;
+	height: 9px;
+    transform: rotate(-90deg);
+}
+
+.table__icon-dropdown {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -900px -365px;
+	width: 8px;
+	height: 5px;
+}
+
+.popup__icon-warning {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -598px -463px;
+	width: 36px;
+	height: 37px;
+}

@@ -1,0 +1,46 @@
+.paging {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    height: 46px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paging__right, .paging__direction, .paging__direction-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paging__right .dropdown {
+    margin-right: 16px;
+    border: none;
+}
+
+.paging__direction-item {
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.paging-previous {
+    margin-right: 13px;
+}
+
+.paging-next {
+    margin-left: 13px;
+}
+
+.paging-num-selected {
+    font-family: 'Notosans-bold', sans-serif;
+    border-radius: 2px;
+}
+
+.paging-text-disable {
+    cursor: default;
+    opacity: 0.5;
+}

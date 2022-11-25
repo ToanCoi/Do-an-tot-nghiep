@@ -1,0 +1,149 @@
+form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 201;
+    height: 100vh;
+    width: 100vw;
+}
+
+.form-tax {
+    background-color: #fff;
+    border-radius: 2px;
+    animation: expand .4s;
+    max-width: 870px;
+    max-height: 80%;
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* header form */
+.form-tax .form__title {
+    display: flex;
+    justify-content: space-between;
+    height: 73px;
+}
+
+.form-tax label::first-letter {
+    text-transform: capitalize;
+}
+
+.form-tax .form__title-left {
+    display: flex;
+    align-items: center;
+    padding: 20px 12px 20px 20px;
+}
+
+.form-tax .form__title-text {
+    font-size: 20px;
+}
+
+.form-tax .form__title-right {
+    padding: 12px;
+}
+
+.form-tax .page-icon {
+    margin-left: 6px;
+}
+
+/* content form */
+.form-tax .form__content {
+    padding: 0 20px;
+}
+
+.form-tax .form-row, .form-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-tax .form-row {
+    margin-bottom: 20px;
+}
+
+.form-tax .form-col .form-item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.form-tax .form__content .table {
+    height: 240px;
+    outline: 1px solid #dad6d661;
+    /* height: calc(80vh - 73px - 77px - 79px - 58px - 88px); */
+}
+
+.form-tax .form__table-header,
+.form-tax .table__header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-tax .form__table-header {
+    margin-bottom: 20px;
+}
+
+.form-tax .table__header-left>span {
+    font-size: 18px;
+    padding-right: 10px;
+}
+    
+.form-tax .table__header-left .search-box {
+    width: calc(var(--column-width) * 2);
+    padding: 0 0 0 10px;
+}
+
+.form-tax .table__header-right .page-icon {
+    margin-left: 10px;
+}
+
+.form-tax .table .function-cel__dropdown{
+    display: none;
+}
+
+.form-tax .table .col-function {
+    min-width: 50px;
+}
+
+.form-tax .table .function-cell>span {
+    background: url('../../../images/trash-red.svg') no-repeat -1px 0;
+	width: 13px;
+	height: 15px;
+    opacity: 0.7;
+}
+
+.form-tax .table .function-cell>span:hover {
+    opacity: 1;
+}
+
+/* footer */
+.form-tax .form__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 15px 0 15px 0;
+    padding: 0 20px;
+    border: none;
+}
+
+.form-tax .form__footer .btn-primary {
+    margin-left: 15px;
+}
+/* icon */
+.form__icon-cancel {
+    background: url('../../../images/times-solid.svg') no-repeat -3px -3px;
+	width: 14px;
+	height: 14px;
+    opacity: 0.8;
+}
