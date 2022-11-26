@@ -6,7 +6,7 @@
       </div>
       <div class="header__branch">
         <span class="header__branch-name text-uppercase"
-          >Công ty cổ phần MISA</span
+          >Nhà hàng NVTOAN</span
         >
         <div class="page-icon">
           <div class="header__icon-branch-work"></div>

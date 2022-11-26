@@ -40,7 +40,6 @@ export default {
   methods: {
     /**
      * Hàm xác định vị trí tooltip
-     * NVTOAN 10/07/2021
      */
     async displayTooltip(e) {
       let tooltip = e.target.closest(".tooltip");
@@ -72,7 +71,6 @@ export default {
 
     /**
      * Hàm tắt tooltip
-     * NVTOAN 12/07/2021
      */
     disableTooltip() {
       this.showTooltip = false;

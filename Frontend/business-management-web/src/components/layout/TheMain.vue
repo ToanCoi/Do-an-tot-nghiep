@@ -38,12 +38,6 @@ export default {
 .main {
     width: calc(100% - var(--nav-width));
     height: 100vh;
-
-    .content {
-        padding: 16px;
-        height: calc(100% - var(--header-height) - 32px);
-        background-color: $light-grey;
-    }
 }
 
 </style>

@@ -1,3 +1,5 @@
+@import '/src/assets/css/variable.scss';
+
 .btn {
     border-radius: 3px;
     height: 33px;
@@ -5,7 +7,12 @@
     align-items: center;
     cursor: pointer;
     padding: 0 16px;
-    font-family: 'Notosans-semibold';
+    font-family: "Notosans-bold", sans-serif;
+    font-weight: 600;
+}
+
+.btn-circle {
+    border-radius: 20px;
 }
 
 /* .btn:focus-visible {
@@ -16,16 +23,16 @@
 .btn-primary {
     border: 1px solid transparent;
     color: #fff;
-    background-color: #6192dc;
+    background-color: $primary;
 }
 
 .btn-primary:hover, .btn-primary:focus-visible {
-    background-color: #5b99f7;
+    background-color: $primary-hover;
     outline: none;
 }
 
 .btn-primary:active {
-    background-color: #6f9ee4;
+    background-color: $primary-active;
 }
 
 .btn-default {

@@ -64,7 +64,7 @@ export default {
       navbarData: [
       {
           iconClass: "nav__icon-sale",
-          itemName: "bán hàng",
+          itemName: "Bán hàng",
           routerLink: "/sell",
         },
         {
@@ -100,7 +100,7 @@ export default {
         {
           iconClass: "nav__icon-tools",
           itemName: "Thiết lập",
-          routerLink: "/setting",
+          routerLink: "/setup",
         },
         {
           iconClass: "nav__icon-report",
@@ -144,7 +144,6 @@ export default {
   methods: {
     /**
      * Hàm thu nhỏ navbar
-     * NVTOAN 05/07/2021
      */
     makeNavSmall() {
       this.$refs.Navbar.makeNavSmall();
@@ -153,7 +152,6 @@ export default {
 
     /**
      * Hàm thông báo cho component con mở rộng navbar
-     * NVTOAN 05/07/2021
      */
     makeNavBig() {
       this.$refs.Main.makeNavBig();
@@ -168,6 +166,7 @@ export default {
 @import url("./assets/css/common/reset.css");
 @import './assets/css/common/global.scss';
 @import './assets/css/common/common.scss';
+@import './assets/css/common/button.scss';
 
 .nav-small {
   --nav-width: 52px;

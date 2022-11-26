@@ -71,7 +71,6 @@ export default {
   methods: {
     /**
      * Hàm mở rộng navbar
-     * NVTOAN 05/07/2021
      */
     makeNavBig() {
       this.smallNav = false;
@@ -80,7 +79,6 @@ export default {
 
     /**
      * Hàm thu nhỏ navbar
-     * NVTOAN 05/07/2021
      */
     makeNavSmall() {
       this.smallNav = true;

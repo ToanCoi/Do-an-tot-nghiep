@@ -30,10 +30,6 @@ Enumeration.ErrorType = {
     DataType: 4
 }
 
-
-Enumeration.MisaCode = {
-    Conflict: 999,
-}
 //Trạng thái của đối tượng
 Enumeration.ObjectMode = {
     Insert: 1,
@@ -45,6 +41,12 @@ Enumeration.ObjectMode = {
 Enumeration.TableStatus = {
     New: 0,
     InProgress: 1,
+}
+
+// Trạng thái món ăn
+Enumeration.DishStatus = {
+    Ready: 0,
+    OutOfStock: 1,
 }
 
 export default Enumeration;

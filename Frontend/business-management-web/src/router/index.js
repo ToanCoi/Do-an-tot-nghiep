@@ -16,10 +16,11 @@ const router = createRouter({
       component: () => import('../views/sell/ContentSell.vue')
     },
     {
-      path: '/product',
-      name: 'Product',
-      component: () => import('../views/product/ContentProduct.vue')
+      path: '/setup/:key?',
+      name: 'Setup',
+      component: () => import('../views/setup/index.vue')
     },
+    
     // {
     //   path: "/about",
     //   name: "about",

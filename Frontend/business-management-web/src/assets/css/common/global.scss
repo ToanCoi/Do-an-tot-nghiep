@@ -76,6 +76,7 @@ body {
 
 .text-bold {
     font-family: 'Notosans-bold', sans-serif;
+    font-weight: 700;
 }
 
 .text-italic {
@@ -132,6 +133,18 @@ $unit-size: 8px;
 @for $var from 1 through 10 {
     .mr-#{$var} {
         margin-right: #{$var * $unit-size} !important;
+    }
+
+    .ml-#{$var} {
+        margin-left: #{$var * $unit-size} !important;
+    }
+
+    .mt-#{$var} {
+        margin-top: #{$var * $unit-size} !important;
+    }
+
+    .mb-#{$var} {
+        margin-bottom: #{$var * $unit-size} !important;
     }
 }
 

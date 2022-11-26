@@ -1,0 +1,17 @@
+
+.table__header {
+    padding: 16px;
+    background-color: #f4f5f8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text-bold {
+        font-size: 20px;
+    }
+}
+
+
+.table__content {
+    padding: 0 16px;
+}

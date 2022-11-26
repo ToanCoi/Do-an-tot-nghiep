@@ -4,6 +4,53 @@
     ref="Grid"
     :style="{ height: customData.gridHeight, width: customData.width }"
   >
+    <div class="grid__ulti">
+      <div
+        class="search-box"
+        :class="{ 'search-box-active': this.searchFocused }"
+      >
+        <input
+          type="text"
+          class="field-input__input"
+          :placeholder="customData.searchPlaceholder"
+          v-model="searchGrid"
+          @focus="this.searchFocused = true"
+          @blur="this.searchFocused = false"
+          @keypress.enter="filterDataTable"
+        />
+        <div class="page-icon">
+          <div class="util__icon-search"></div>
+        </div>
+      </div>
+      <div class="util__right">
+        <div class="btn-refresh page-icon" @click="refreshData">
+          <div title="Làm mới" class="util__icon-refresh"></div>
+        </div>
+        <div title="Xoá bản ghi" class="page-icon ml-2" @click="deleteSelectedRows">
+          <svg
+            width="20px"
+            height="20px"
+            opacity="0.7"
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="trash-alt"
+            class="svg-inline--fa fa-trash-alt fa-w-14"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              fill="grey"
+              d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+            ></path>
+          </svg>
+        </div>
+        <div class="btn-export page-icon ml-2" @click="exportData">
+          <div title="Xuất khẩu" class="util__icon-export"></div>
+        </div>
+      </div>
+    </div>
     <div class="table" :style="{ height: customData.tableHeight }">
       <table>
         <thead>
@@ -240,6 +287,7 @@ import CommonFn from "../../js/common/CommonFn";
 import Paging from "./Paging.vue";
 import createNumberMask from "text-mask-addons/dist/createNumberMask";
 import Resource from "../../js/common/Resource";
+// import Tooltip from "../Tooltip.vue";
 
 const currencyMask = createNumberMask({
   prefix: "",
@@ -251,6 +299,7 @@ const currencyMask = createNumberMask({
 export default {
   components: {
     Paging,
+    // Tooltip
     // FieldInputLabel,
   },
   props: {
@@ -269,6 +318,10 @@ export default {
   data() {
     return {
       Resource: Resource,
+      searchGrid: null,
+      searchFocused: false,
+      refreshFocused: false,
+      exportFocused: false,
       editableDataDisplay: null,
       invalidEditable: false,
       currentSelectedRows: [],
@@ -325,8 +378,35 @@ export default {
   },
   methods: {
     /**
+     * Hàm refresh dữ liệu
+     */
+    refreshData() {
+      this.$emit("refreshData");
+    },
+
+    /**
+     * Hàm filter dữ liệu trên bảng
+     */
+    filterDataTable() {
+      this.$emit("filterDataTable", searchGrid);
+    },
+
+    /**
+     * Hàm export dữ liệu sang excel
+     */
+    exportData() {
+      this.$emit("exportData");
+    },
+
+    /**
+     * Hàm xóa bản ghi đã chọn
+     */
+    deleteSelectedRows() {
+      this.$emit("deleteSelectedRows");
+    },
+
+    /**
      * Hàm chọn/bỏ chọn tất cả các row
-     * NVTOAN 06/07/2021
      */
     toggleSelectAllRow() {
       //Auto chọn bản ghi đầu
@@ -340,7 +420,6 @@ export default {
     },
     /**
      * Hàm xử lý hover chuột vào row
-     * NVTOAN 06/07/2021
      */
     rowHover(e) {
       e.target.classList.add("tr-hover");
@@ -348,7 +427,6 @@ export default {
 
     /**
      * Hàm xử lý bỏ hover chuột vào row
-     * NVTOAN 06/07/2021
      */
     rowUnhover(e) {
       e.target.classList.remove("tr-hover");
@@ -356,7 +434,6 @@ export default {
 
     /**
      * Hàm xử lý click chọn một row
-     * NVTOAN 15/07/2021
      */
     clickRow(index) {
       //Reset list
@@ -371,7 +448,6 @@ export default {
 
     /**
      * Hàm xử lý khi ctrl click vào row
-     * NVTOAN 19/07/2021
      */
     ctrlClickRow(index) {
       //Thêm row được chọn vào list
@@ -388,7 +464,6 @@ export default {
 
     /**
      * Hàm xử lý shift click row
-     * NVTOAN 21/08/2021
      */
     shiftClickRow(index) {
       let len = this.currentSelectedRows.length,
@@ -414,7 +489,6 @@ export default {
 
     /**
      * Hàm xử lý click chuột vào row
-     * NVTOAN 07/07/2021
      */
     dbClickRow(item) {
       this.$emit("dbClickRow", item);
@@ -422,7 +496,6 @@ export default {
 
     /**
      * Hàm xử lý chọn row khi ấn mũi tên lên
-     * NVTOAN 19/07/2021
      */
     pressUpArrowKey(index) {
       if (index > 0) {
@@ -432,7 +505,6 @@ export default {
 
     /**
      * Hàm xử lý chọn row khi ấn mũi tên xuống
-     * NVTOAN 19/07/2021
      */
     pressDownArrowKey(index) {
       if (index < this.customData.gridData.length - 1) {
@@ -442,7 +514,6 @@ export default {
 
     /**
      * Hảm chọn nhiều khi chạy chuột và nhấn shift
-     * NVTOAN 19/07/2021
      */
     mouseEnterWhenShiftPressed(index) {
       if (!this.currentSelectedRows.includes(index)) {
@@ -452,7 +523,6 @@ export default {
 
     /**
      * Hàm hiện context menu
-     * NVTOAN 19/07/2021
      */
     rightClickRow(event, index) {
       this.clickRow(index);
@@ -495,7 +565,6 @@ export default {
 
     /**
      * Hàm xử lý click chuột vào ô select
-     * NVTOAN 06/07/2021
      */
     selectBoxClick(index) {
       if (this.currentSelectedRows.includes(index)) {
@@ -511,7 +580,6 @@ export default {
 
     /**
      * Hàm kiểm tra xem row đã được chọn hay chưa
-     * NVTOAN 06/07/2021
      */
     checkRowSelected(index) {
       return this.currentSelectedRows.includes(index);
@@ -519,7 +587,6 @@ export default {
 
     /**
      * Hàm chuyển đổi dữ liệu để hiển thị lên bảng
-     * NVTOAN 06/07/2021
      */
     getDisplayValue(data, dataType, enumName) {
       return CommonFn.convertOriginData(data, dataType, enumName);
@@ -527,7 +594,6 @@ export default {
 
     /**
      * Hàm lấy ra số lượng item đang được chọn để hiện lên thông báo
-     * NVTOAN 06/07/2021
      */
     getNumberSelectedItem() {
       return this.currentSelectedRows.length;
@@ -535,7 +601,6 @@ export default {
 
     /**
      * Mở dropdown function
-     * NVTOAN 06/07/2021
      */
     toggleDropdownFunction(event, item) {
       if (this.currentDropdown == null) {
@@ -572,7 +637,6 @@ export default {
 
     /**
      * Hàm đóng dropdown function
-     * NVTOAN 06/07/2021
      */
     closeDropdown() {
       this.currentDropdown = null;
@@ -582,7 +646,6 @@ export default {
 
     /**
      * Gọi cha để thông báo người dùng click vào default function
-     * NVTOAN 07/07/2021
      */
     async clickDefaultFunction(item) {
       await this.clickRow(this.customData.gridData.indexOf(item));
@@ -592,7 +655,6 @@ export default {
 
     /**
      * Gọi cha để thông báo người dùng click vào một item function
-     * NVTOAN 07/07/2021
      */
     clickFunctionItem(fn, item) {
       this.$emit("clickFunctionItem", fn, item);
@@ -600,7 +662,6 @@ export default {
 
     /**
      * Hàm gọi cha để chuyển trang được click
-     * NVTOAN 06/07/2021
      */
     clickPageNum(pageNum) {
       this.$emit("clickPageNum", pageNum);
@@ -608,7 +669,6 @@ export default {
 
     /**
      * Hàm lấy id của những row đang được chọn
-     * NVTOAN 06/07/2021
      */
     getListIdSelectedItem() {
       let listId = [],
@@ -624,7 +684,6 @@ export default {
 
     /**
      * Hàm thực hiện reset list item đang được chọn về focus vào dòng đầu tiên
-     * NVTOAN 17/07/2021
      */
     resetCurrentSelectedRows() {
       //Nếu có dữ liệu thì mới auto click
@@ -639,7 +698,6 @@ export default {
 
     /**
      * Hàm gọi cha thay đổi page size
-     * NVTOAN 06/07/2021
      */
     changePageSize(pageSize) {
       this.$emit("changePageSize", pageSize);
@@ -647,7 +705,6 @@ export default {
 
     /**
      * Hàm xử lý sự kiện focus vào ô cho phép nhập
-     * NVTOAN 18/08/2021
      */
     focusEditableCell(event) {
       event.target.select();
@@ -655,7 +712,6 @@ export default {
 
     /**
      * Hàm xử lý có cho nhập hay không tuỳ vào kiểu dữ liệu
-     * NVTOAN 14/08/2021
      */
     keyDownOnEditableCell(event, dataType) {
       switch (dataType) {
@@ -679,7 +735,6 @@ export default {
 
     /**
      * Hàm xử lý khi người dùng sửa dữ liệu ở ô cho phép sửa
-     * NVTOAN 14/08/2021
      */
     onInputEditableCell(dataType, key, value, index) {
       //Thông báo ra ngoài
@@ -688,7 +743,6 @@ export default {
 
     /**
      * Hàm lấy giá trị tổng của cột
-     * NVTOAN 03/09/2021
      */
     getSumaryValue(fieldName) {
       if (this.customData.gridData && this.customData.gridData.length > 0) {
@@ -707,7 +761,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("../../assets/css/components/table/table.css");
+@import url("../../assets/css/components/table/table.scss");
 .slide-fade-enter-active {
   transition: transform 0.2s ease;
 }

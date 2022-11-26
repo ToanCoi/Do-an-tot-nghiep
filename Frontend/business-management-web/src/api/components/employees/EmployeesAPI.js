@@ -23,7 +23,6 @@ class EmployeesAPI extends BaseAPI {
 
     /**
      * Hàm lấy mã nhân viên mới
-     * NVTOAN 05/07/2021
      * @returns 
      */
     getNewEmployeeCode() {
@@ -35,7 +34,6 @@ class EmployeesAPI extends BaseAPI {
      * @param {string} propName Tên property cần truy vấn
      * @param {string} propValue Giá trị của property
      * @returns Một bản ghi lấy được có propertyName và propValue truyền vào
-     * NVTOAN 09/07/2021
      */
     getEmployeeByProperty(propName, propValue) {
         let queryString = `${this.controller}/Property?propName=${propName}&propValue=${propValue}`;
@@ -46,7 +44,6 @@ class EmployeesAPI extends BaseAPI {
     /**
      * Hàm export dữ liệu
      * @param {string} filterValue Giá trị filter
-     * NVTOAN 12/07/2021
      */
     exportData(filterValue) {
         let queryString = `${this.controller}/Export${filterValue ? ('?&filterValue=' + filterValue) : ''}`;
@@ -58,7 +55,6 @@ class EmployeesAPI extends BaseAPI {
      * Hàm lấy danh sách nhân viên ngoại trừ 1 số nhân viên
      * @param {array} listId Danh sách Id nhân viên không lấy
      * @returns Danh sách nhân viên
-     * NVTOAN 19/08/2021
      */
     getEmployeesExceptSome(listId, pageSize, pageNum, filterValue) {
         let queryString = `${this.controller}/Filter/Except?pageSize=${pageSize}&pageNum=${pageNum}${filterValue ? ('&filterValue=' + filterValue) : ''}`;

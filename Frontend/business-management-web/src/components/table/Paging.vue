@@ -116,7 +116,6 @@ export default {
   methods: {
     /**
      * Hàm khi hover và pageNum
-     * NVTOAN 06/07/2021
      */
     hoverPageNum(pageIndex) {
       this.currentHoverPageNum = pageIndex;
@@ -124,7 +123,6 @@ export default {
 
     /**
      * Hàm khi hover và pageNum
-     * NVTOAN 06/07/2021
      */
     unhoverPageNum() {
       this.currentHoverPageNum = null;
@@ -132,7 +130,6 @@ export default {
 
     /**
      * Hàm lấy ra mảng phần tử hiển thị ở giữa của page-num
-     * NVTOAN 09/07/2021
      */
     getArrPageNumDisplay() {
       //Nếu tổng số trang > số trang hiển thị thì tạo mảng ở giữa
@@ -160,7 +157,6 @@ export default {
 
     /**
      * Hàm tạo mảng hiển thị page-num trong trường hợp tổng số trang > 5
-     * NVTOAN 09/07/2021
      */
     getArrPageNumDisplayMultiple() {
       //Nếu hiện tại đang chọn page 1
@@ -182,7 +178,6 @@ export default {
 
     /**
      * Hàm lấy page num ở giữa
-     * NVTOAN 09/07/2021
      */
     getArrPageNumMiddle() {
       //Nếu đang là trang 2 thì chỉ hiển thị 2,3
@@ -208,7 +203,6 @@ export default {
 
     /**
      * Hàm hiển thị dấu còn nữa '...'
-     * NVTOAN 09/07/2021
      */
     displayExtant() {
       //Dấu còn nữa bên trái
@@ -225,7 +219,6 @@ export default {
 
     /**
      * Hàm khi click page num
-     * NVTOAN 06/07/2021
      */
     clickPageNum(pageIndex) {
       this.currentPageNum = pageIndex;
@@ -236,7 +229,6 @@ export default {
 
     /**
      * Hàm xử lý khi ấn first page
-     * NVTOAN 06/07/2021
      */
     clickFirstPage() {
       if (this.currentPageNum != 1) {
@@ -249,7 +241,6 @@ export default {
 
     /**
      * Hàm xử lý khi ấn previous page
-     * NVTOAN 06/07/2021
      */
     clickPreviousPage() {
       if (this.currentPageNum > 1) {
@@ -262,7 +253,6 @@ export default {
 
     /**
      * Hàm xử lý khi ấn next page
-     * NVTOAN 06/07/2021
      */
     clickNextPage() {
       if (this.currentPageNum < this.customData.totalPage) {
@@ -275,7 +265,6 @@ export default {
 
     /**
      * Hàm xử lý khi ấn last page
-     * NVTOAN 06/07/2021
      */
     clickLastPage() {
       if (this.currentPageNum != this.customData.totalPage) {
@@ -288,7 +277,6 @@ export default {
 
     /**
      * Hàm thay đổi page size
-     * NVTOAN 09/07/2021
      */
     changePageSize(pageSize) {
       this.$emit("changePageSize", pageSize);

@@ -1,0 +1,84 @@
+.content__util {
+    padding: 16px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-box {
+    height: 32px;
+    width: calc(var(--column-width) * 2.5);
+    display: flex;
+    align-items: center;
+    border: 1px solid #d4d4d4;
+    border-radius: 1px;
+    padding: 0 8px;
+}
+
+.search-box-active {
+    border: 1px solid #6192dc;
+}
+
+.search-box input {
+    height: 100%;
+    outline: none;
+    border: none;
+    width: calc(100% - 16px);
+}
+
+.util__right {
+    display: flex;
+    align-items: center;
+}
+
+.page-icon {
+    cursor: pointer;
+}
+
+.page-icon svg:hover {
+    opacity: 0.6;
+}
+
+.btn-refresh.page-icon {
+    margin-left: 10px;
+}
+
+.btn-refresh, .btn-export {
+    opacity: 0.7;
+}
+
+.btn-refresh:hover, .btn-export:hover {
+    opacity: 1;
+}
+
+/* icon */
+.util__icon-search {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -317px -148px;
+	width: 16px;
+	height: 16px;
+    opacity: 0.5;
+}
+
+.util__icon-refresh {
+    background: url('../../../images/redo-solid.svg') no-repeat 0 0;
+	width: 20px;
+	height: 20px;
+}
+
+.util__icon-refresh-active {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -1098px -146px;
+	width: 20px;
+	height: 21px;
+}
+
+.util__icon-export {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -1265px -90px;
+	width: 23px;
+	height: 20px;
+}
+
+.util__icon-export-active {
+    background: url('../../../images/Sprites.64af8f61.svg') no-repeat -1265px -146px;
+	width: 23px;
+	height: 20px;
+}
