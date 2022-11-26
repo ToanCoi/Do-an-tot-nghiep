@@ -221,8 +221,8 @@
     },
     "PG.Core/1.0.0": {
       "type": "project",
-      "path": "../Core/PG.Core.csproj",
-      "msbuildProject": "../Core/PG.Core.csproj"
+      "path": "../PG.Core/PG.Core.csproj",
+      "msbuildProject": "../PG.Core/PG.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -239,11 +239,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj",
+      "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj",
       "projectName": "PG.Infrastructure",
-      "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj",
+      "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
-      "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\obj\\",
+      "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -260,8 +260,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj": {
-              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj"
+            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj": {
+              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj"
             }
           }
         }

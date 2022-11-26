@@ -696,13 +696,13 @@
     },
     "PG.Core/1.0.0": {
       "type": "project",
-      "path": "../Core/PG.Core.csproj",
-      "msbuildProject": "../Core/PG.Core.csproj"
+      "path": "../PG.Core/PG.Core.csproj",
+      "msbuildProject": "../PG.Core/PG.Core.csproj"
     },
     "PG.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../DoAn.Infrastructure/PG.Infrastructure.csproj",
-      "msbuildProject": "../DoAn.Infrastructure/PG.Infrastructure.csproj"
+      "path": "../PG.Infrastructure/PG.Infrastructure.csproj",
+      "msbuildProject": "../PG.Infrastructure/PG.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -719,11 +719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj",
+      "projectUniqueName": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\PG.API.csproj",
       "projectName": "PG.API",
-      "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj",
+      "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\PG.API.csproj",
       "packagesPath": "C:\\Users\\MY PC\\.nuget\\packages\\",
-      "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\obj\\",
+      "outputPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MY PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -740,11 +740,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj": {
-              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\Core\\PG.Core.csproj"
+            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj": {
+              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj"
             },
-            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj": {
-              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj"
+            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj": {
+              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj"
             }
           }
         }

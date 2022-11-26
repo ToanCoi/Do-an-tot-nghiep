@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ExFRyehdIdERoxV76ucZYp3uNySHTTAMTeibE0EzFrEqWdS7xIBXm/aINyi3vgTowhJm6xgCz8dWn5AWgZXoxw==",
+  "dgSpecHash": "u6GezNdx/OPBRRUupftWnNujFQCuGhr2aY55QcxWVybYqm/yhVqwXA4wewa1RRziNER97gLjrBB/iz9D8+vRCA==",
   "success": true,
-  "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.QuanLyNhaHang\\PG.API.csproj",
+  "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\PG.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MY PC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

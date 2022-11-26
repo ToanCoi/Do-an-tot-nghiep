@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0T6xoEGOLc+dauD3XzCDmqH5RhOyh4G+bqOGwEuzcckbG8W/8W4MgQ29mgSMReLTsSbTT8cTLf3TMc2LNIFa4A==",
+  "dgSpecHash": "4orQNdcydNAxyShiL2OEo40J4auHbJ7GggY7lFzlUxYq4iUgVmy7gNdkO5Pns7hxM/EckF+MHCRVHFSW8lylDQ==",
   "success": true,
-  "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\DoAn.QuanLyNhaHang\\DoAn.Infrastructure\\PG.Infrastructure.csproj",
+  "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MY PC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
