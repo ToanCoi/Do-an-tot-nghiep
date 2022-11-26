@@ -13,7 +13,7 @@
         </div>
         <a href="#" class="logo" v-show="!smallNav">
           <img
-            src="/src/assets/images/Logo_Module_TiengViet_White.66947422.svg"
+            src=""
             alt=""
           />
         </a>
