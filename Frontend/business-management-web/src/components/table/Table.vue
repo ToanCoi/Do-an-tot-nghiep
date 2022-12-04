@@ -26,7 +26,11 @@
         <div class="btn-refresh page-icon" @click="refreshData">
           <div title="Làm mới" class="util__icon-refresh"></div>
         </div>
-        <div title="Xoá bản ghi" class="page-icon ml-2" @click="deleteSelectedRows">
+        <div
+          title="Xoá bản ghi"
+          class="page-icon ml-2"
+          @click="deleteSelectedRows"
+        >
           <svg
             width="20px"
             height="20px"
@@ -51,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="table" :style="{ height: customData.tableHeight }">
+    <div class="table" :style="{ 'max-height': customData.tableHeight }">
       <table>
         <thead>
           <tr>
@@ -273,7 +277,7 @@
       </div>
     </div>
     <Paging
-      v-if="customData.showPaging"
+      v-show="customData.showPaging"
       :customData="paging"
       @clickPageNum="clickPageNum"
       @changePageSize="changePageSize"
@@ -287,7 +291,7 @@ import CommonFn from "../../js/common/CommonFn";
 import Paging from "./Paging.vue";
 import createNumberMask from "text-mask-addons/dist/createNumberMask";
 import Resource from "../../js/common/Resource";
-// import Tooltip from "../Tooltip.vue";
+import Tooltip from "../Tooltip.vue";
 
 const currencyMask = createNumberMask({
   prefix: "",
@@ -299,8 +303,7 @@ const currencyMask = createNumberMask({
 export default {
   components: {
     Paging,
-    // Tooltip
-    // FieldInputLabel,
+    Tooltip,
   },
   props: {
     customData: {

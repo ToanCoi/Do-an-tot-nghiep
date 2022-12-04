@@ -13,7 +13,6 @@
         { bottom: bottom },
         { top: top },
       ]"
-      style="left: 196px"
       v-show="showTooltip && customData.length > 0"
       >{{ customData }}</span
     >
@@ -87,6 +86,8 @@ export default {
 .tooltip {
   position: relative;
   outline: none;
+  height: fit-content;
+  width: fit-content;
 }
 
 .tooltip__content {

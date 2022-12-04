@@ -7,9 +7,9 @@ export const tableSetupData = () => {
 
     const tableGrid = reactive({
         width: "100%",
-        gridHeight: "calc(100vh - var(--header-height) - 86px - 60px - 16px)",
+        gridHeight: "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
         tableHeight:
-            "calc(100vh - var(--header-height) - 86px - 60px - 16px - 46px)",
+            "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
         searchPlaceholder: 'Tìm kiếm theo số bàn, tầng, trạng thái',
         column: [
             {

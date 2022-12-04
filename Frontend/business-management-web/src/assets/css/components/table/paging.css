@@ -1,6 +1,6 @@
 .paging {
     position: sticky;
-    bottom: 0;
+    bottom: 46px;
     left: 0;
     height: 46px;
     width: 100%;
@@ -17,7 +17,6 @@
 
 .paging__right .dropdown {
     margin-right: 16px;
-    border: none;
 }
 
 .paging__direction-item {

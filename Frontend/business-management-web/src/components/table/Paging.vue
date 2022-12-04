@@ -67,7 +67,7 @@
 
 <script>
 export default {
-  component: {},
+  component: { },
   props: {
     customData: {
       type: Object,

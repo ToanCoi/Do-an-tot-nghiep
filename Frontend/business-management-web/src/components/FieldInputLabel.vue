@@ -9,8 +9,7 @@
         <span style="color: red">*</span>
       </span>
     </label>
-    <!-- <Tooltip :customData="errorMessage"> -->
-    <template>
+    <Tooltip :customData="errorMessage">
       <DxDateBox
         v-if="customData.dataType == 'Date'"
         v-model="cloneModel"
@@ -63,8 +62,7 @@
         ref="input"
         v-model="cloneModel"
       />
-    </template>
-    <!-- </Tooltip> -->
+    </Tooltip>
   </div>
 </template>
 
@@ -74,12 +72,12 @@ import Resource from "../js/common/Resource";
 import moment from "moment";
 import CommonFn from "../js/common/CommonFn";
 import Enumeration from "../js/common/Enumeration";
-// import Tooltip from "../components/Tooltip.vue";
+import Tooltip from "./Tooltip.vue";
 
 export default {
   components: {
     DxDateBox,
-    // Tooltip,
+    Tooltip,
   },
   props: {
     customData: {
