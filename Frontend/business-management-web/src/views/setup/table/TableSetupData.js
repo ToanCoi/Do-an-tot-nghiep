@@ -9,7 +9,7 @@ export const tableSetupData = () => {
         width: "100%",
         gridHeight: "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
         tableHeight:
-            "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
+            "calc(100% - 60px)",
         searchPlaceholder: 'Tìm kiếm theo số bàn, tầng, trạng thái',
         column: [
             {
@@ -44,30 +44,7 @@ export const tableSetupData = () => {
         ],
         functions: ["Nhân bản", "Xóa", "Ngưng sử dụng"],
         defaultFunction: "Sửa",
-        gridData: [{
-            floor: 1,
-            table_name: 2,
-            max_size: 4,
-            table_status: Enumeration.TableStatus.InProgress
-        },
-        {
-            floor: 1,
-            table_name: 2,
-            max_size: 4,
-            table_status: Enumeration.TableStatus.New
-        },
-        {
-            floor: 1,
-            table_name: 2,
-            max_size: 4,
-            table_status: Enumeration.TableStatus.InProgress
-        },
-        {
-            floor: 1,
-            table_name: 2,
-            max_size: 4,
-            table_status: Enumeration.TableStatus.InProgress
-        }],
+        gridData: [],
         currentSelectedRows: [],
         idFieldName: "dish_id",
         showPaging: true,
@@ -75,8 +52,9 @@ export const tableSetupData = () => {
         currentPageNum: 1,
         totalPage: 1,
         maxPageNumDisplay: 5,
-        totalRecord: 4,
+        totalRecord: 0,
         filterValue: null,
+        filterColumn: 'table_name, floor, table_status'
     });
 
 

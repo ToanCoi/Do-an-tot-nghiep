@@ -17,6 +17,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 @import url('../assets/css/components/popup.css');
 </style>

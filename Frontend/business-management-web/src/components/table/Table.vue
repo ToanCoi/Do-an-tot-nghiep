@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="table" :style="{ 'max-height': customData.tableHeight }">
+    <div class="table" :style="{ 'height': customData.tableHeight }">
       <table>
         <thead>
           <tr>
@@ -446,7 +446,7 @@ export default {
       this.currentSelectedRows.push(index);
 
       //focus vào ô được chọn
-      this.$refs[index][0].focus();
+      // this.$refs[index][0]?.focus();
     },
 
     /**
@@ -462,7 +462,7 @@ export default {
       }
 
       //focus vào ô được chọn
-      this.$refs[index][0].focus();
+      // this.$refs[index][0].focus();
     },
 
     /**

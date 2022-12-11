@@ -13,6 +13,15 @@ export default class BaseAPI {
     }
 
     /**
+     * Lấy dữ liệu paging
+     * @param {*} payload 
+     * @returns 
+     */
+     getPagingData(payload) {
+        return BaseAPIConfig.post(`${this.controller}/list`, payload)
+    }
+
+    /**
      * Hàm lấy bản ghi theo Id
      * @param {*} id 
      */

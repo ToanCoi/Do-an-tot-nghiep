@@ -96,7 +96,6 @@ export default {
   background: rgb(56, 55, 55);
   padding: 5px;
   z-index: 10000;
-  font-family: 'Notosans-regular';
   font-weight: 300 !important;
   color: #fff;
   font-size: 12px;

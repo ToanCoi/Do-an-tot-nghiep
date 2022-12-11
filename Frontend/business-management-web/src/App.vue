@@ -187,6 +187,7 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 999;
+  background-color: rgba($color: #fff, $alpha: 0.5)
 }
 
 /* popup */

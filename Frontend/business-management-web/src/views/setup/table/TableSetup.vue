@@ -19,6 +19,7 @@
         @clickPageNum="changePageNum"
         @changePageSize="changePageSize"
         @changeListSelectedRow="changeListSelectedRow"
+        @refreshData="refreshData"
       />
     </div>
 
@@ -27,13 +28,14 @@
 </template> 
     
 <script>
-import { reactive, ref, getCurrentInstance, nextTick } from "vue";
+import { reactive, ref, getCurrentInstance, nextTick, onMounted } from "vue";
 import { tableSetupData } from "./TableSetupData";
 import Enumeration from "../../../js/common/Enumeration.js";
 import Resource from "../../../js/common/Resource.js";
 import CommonFn from "../../../js/common/CommonFn.js";
 import Table from "../../../components/table/Table.vue";
 import TableSetupForm from "./TableSetupForm.vue";
+import TableAPI from "../../../api/views/setup/TableAPI";
 
 export default {
   components: { Table, TableSetupForm },
@@ -42,6 +44,35 @@ export default {
     const { proxy } = getCurrentInstance();
 
     const { tableGrid } = tableSetupData();
+
+    onMounted(() => {
+      proxy.getData();
+    });
+
+    async function getData() {
+      proxy.$store.commit("SHOW_LOADER", true);
+
+      await TableAPI.getPagingData({
+        PageSize: proxy.tableGrid.pageSize,
+        CurrentPage: proxy.tableGrid.currentPageNum,
+        FilterValue: proxy.tableGrid.filterValue,
+        FilterColumn: proxy.tableGrid.filterColumn,
+      })
+        .then((response) => {
+          proxy.tableGrid.gridData = response.data.data;
+          proxy.tableGrid.totalRecord = response.data.totalRecord;
+          proxy.tableGrid.totalPage = response.data.totalPage;
+        })
+        .catch(() => {
+          proxy.showErrorPopup = true;
+          proxy.tableGrid.gridData = [];
+          proxy.$store.commit("SHOW_LOADER", false);
+        });
+
+      proxy.$store.commit("SHOW_LOADER", false);
+
+      proxy.$refs.Table.resetCurrentSelectedRows();
+    }
 
     /**
      * Hàm filter dữ liệu
@@ -56,19 +87,22 @@ export default {
     /**
      * mở form detail
      */
-    function showFormDetail(event, data) {
-      if (data) {
-      } else {
-        nextTick(() => {
-          proxy.$refs.FormDetail.openForm("");
-        });
+    function showFormDetail(data) {
+      if(!data.table_id) {
+        data = '';
       }
+      
+      nextTick(() => {
+        proxy.$refs.FormDetail.openForm(data);
+      });
     }
 
     /**
      * refresh dữ liệu
      */
-    function refreshData() {}
+    function refreshData() {
+      proxy.getData();
+    }
 
     function clickFunctionItem() {}
 
@@ -90,6 +124,7 @@ export default {
       changePageNum,
       changePageSize,
       changeListSelectedRow,
+      getData,
     };
   },
 };
