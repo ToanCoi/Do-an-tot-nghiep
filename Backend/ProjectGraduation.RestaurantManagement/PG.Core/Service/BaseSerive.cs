@@ -114,6 +114,29 @@ namespace PG.Core.Service
         }
 
         /// <summary>
+        /// Lấy dữ liệu paging
+        /// </summary>
+        /// <returns>Danh sách bản ghi</returns>
+        public object GetPagingData(PagingParam param)
+        {
+            //Lấy dữ liệu về
+            var employees = _baseRepository.GetEntitiesFilter(param);
+
+            //Lấy tổng số bản ghi
+            var totalRecord = _baseRepository.GetTotalFilters(param);
+
+            //Dữ liệu trả về
+            var data = new
+            {
+                TotalRecord = totalRecord,
+                TotalPage = param.PageSize != 0 ? Math.Ceiling((decimal)((decimal)totalRecord / param.PageSize)) : 1,
+                data = employees
+            };
+
+            return data;
+        }
+
+        /// <summary>
         /// Lấy bản ghi theo Id
         /// </summary>
         /// <param name="Id">Id của đối tượng cần lấy</param>

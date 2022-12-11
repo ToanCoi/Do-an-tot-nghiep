@@ -39,7 +39,7 @@ namespace PG.Core.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MISA.AMIS.Core.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PG.Core.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -131,9 +131,9 @@ namespace PG.Core.Properties {
                 return ResourceManager.GetString("Msg_InvalidData", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///   Looks up a localized string similar to Có lỗi xảy ra, vui lòng liên hệ MISA.
+        ///   Looks up a localized string similar to Có lỗi xảy ra, vui lòng liên hệ NVTOAN.
         /// </summary>
         internal static string Msg_ServerError {
             get {

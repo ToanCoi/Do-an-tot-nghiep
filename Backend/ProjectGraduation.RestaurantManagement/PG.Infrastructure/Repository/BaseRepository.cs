@@ -9,6 +9,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PG.Infrastructure.Repository
 {
@@ -28,7 +29,7 @@ namespace PG.Infrastructure.Repository
             _connectionString = _configuration.GetConnectionString("Development");
             _dbConnection = new MySqlConnection(_connectionString);
             _dbConnection.Open();
-            _tableName = typeof(TEntity).Name;
+            _tableName = ((TableAttribute)Attribute.GetCustomAttribute(typeof(TEntity), typeof(TableAttribute))).Name;
         }
         #endregion
 
@@ -123,9 +124,82 @@ namespace PG.Infrastructure.Repository
         /// <returns>List bản ghi lấy được</returns>
         public IEnumerable<TEntity> GetEntities()
         {
-            var entities = _dbConnection.Query<TEntity>($"Proc_Get{_tableName}s", commandType: CommandType.StoredProcedure);
+            var entities = _dbConnection.Query<TEntity>($"Select * from `{_tableName}`", commandType: CommandType.Text);
 
             return entities;
+        }
+
+        /// <summary>
+        /// Lấy bản ghi theo filter
+        /// </summary>
+        /// <returns>List bản ghi lấy được</returns>
+        public IEnumerable<TEntity> GetEntitiesFilter(PagingParam pagingParam)
+        {
+            var sql = new StringBuilder();
+            var where = this.ParseWhere(pagingParam);
+
+            sql.Append($"SELECT * FROM `{_tableName}`");
+            if(where != null)
+            {
+                sql.Append(where);
+            }
+
+            if(pagingParam.PageSize > 0)
+            {
+                sql.Append($" LIMIT {pagingParam.PageSize}");
+
+                if(pagingParam.CurrentPage > 1)
+                {
+                    sql.Append($" OFFSET {(pagingParam.CurrentPage - 1) * pagingParam.PageSize}");
+                }
+            }
+
+            var entities = _dbConnection.QueryAsync<TEntity>(sql.ToString(), commandType: CommandType.Text).GetAwaiter().GetResult();
+
+            return entities;
+        }
+
+        /// <summary>
+        /// Lấy tổng số bản ghi theo filter
+        /// </summary>
+        /// <returns></returns>
+        public int GetTotalFilters(PagingParam pagingParam)
+        {
+            var where = this.ParseWhere(pagingParam);
+            string sql = $"Select Count(*) from `{_tableName}` {where}";
+
+            var total = _dbConnection.QueryFirstOrDefaultAsync<int>(sql, commandType: CommandType.Text).GetAwaiter().GetResult();
+
+            return total;
+        }
+
+        /// <summary>
+        /// Hàm build câu where
+        /// </summary>
+        /// <param name="pagingParam"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        protected string ParseWhere(PagingParam pagingParam)
+        {
+            var where = new StringBuilder();
+            var columnsFilter = pagingParam.FilterColumn?.Split(",");
+
+            if(columnsFilter != null && columnsFilter.Length > 0)
+            {
+                where.Append(" WHERE ");
+
+                for(int i = 0; i < columnsFilter.Length; i++)
+                {
+                    where.Append($" `{columnsFilter[i].Trim()}` like '%{pagingParam.FilterValue ?? ""}%'");
+
+                    if(i < columnsFilter.Length - 1)
+                    {
+                        where.Append(" OR ");
+                    }
+                }
+            }
+
+            return where.ToString();
         }
 
         /// <summary>
@@ -137,7 +211,8 @@ namespace PG.Infrastructure.Repository
         {
             var idParam = new DynamicParameters();
             idParam.Add($"{_tableName}Id", Id);
-            var customer = _dbConnection.QueryFirstOrDefault<TEntity>($"Proc_Get{_tableName}ById", idParam, commandType: CommandType.StoredProcedure);
+
+            var customer = _dbConnection.QueryFirstOrDefault<TEntity>($"SELECT * FROM {_tableName} WHERE {_tableName}_id = @{_tableName}Id", idParam, commandType: CommandType.Text);
 
             return customer;
         }
@@ -183,9 +258,27 @@ namespace PG.Infrastructure.Repository
         public virtual int InsertEntity(TEntity entity)
         {
             int rowAffects = 0;
+            var sql = new StringBuilder();
+
+            var columns = new List<string>();
+            var values = new List<string>();
+            var param = new DynamicParameters();
+            foreach(var prop in entity.GetType().GetProperties(System.Reflection.BindingFlags.Public | 
+                                                                System.Reflection.BindingFlags.Instance | 
+                                                                System.Reflection.BindingFlags.DeclaredOnly)
+            )
+            {
+                columns.Add($"`{prop.Name}`");
+
+                values.Add($"@{prop.Name}");
+
+                param.Add($"@{prop.Name}", prop.GetValue(entity));
+            }
+
+            sql.Append($"INSERT INTO `{_tableName}` ({string.Join(", ", columns)}) VALUES ({string.Join(", ", values)})");
 
             //Insert
-            rowAffects = _dbConnection.Execute($"Proc_Insert{_tableName}", entity, commandType: CommandType.StoredProcedure);
+            rowAffects = _dbConnection.Execute(sql.ToString(), param, commandType: CommandType.Text);
 
             return rowAffects;
         }

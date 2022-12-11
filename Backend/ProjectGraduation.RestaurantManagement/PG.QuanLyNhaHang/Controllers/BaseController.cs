@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PG.Core.Entities;
 using PG.Core.Enum;
 using PG.Core.Interface.Service;
 using System;
@@ -62,6 +63,26 @@ namespace PG.API.Controllers
             if (entity != null)
             {
                 return Ok(entity);
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
+
+        /// <summary>
+        /// Lấy dữ liệu paging
+        /// </summary>
+        /// <returns>Danh sách bản ghi</returns>
+        [EnableCors("AllowCROSPolicy")]
+        [HttpPost("list")]
+        public IActionResult GetPagingData([FromBody] PagingParam param)
+        {
+            var pagingData = _baseService.GetPagingData(param);
+
+            if (pagingData != null)
+            {
+                return Ok(pagingData);
             }
             else
             {

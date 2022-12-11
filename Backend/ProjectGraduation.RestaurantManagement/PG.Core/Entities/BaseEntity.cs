@@ -34,7 +34,7 @@ namespace PG.Core.Entities
         /// <summary>
         /// Người tạo
         /// </summary>
-        public string CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 
         /// <summary>
         /// Ngày sửa
@@ -44,11 +44,11 @@ namespace PG.Core.Entities
         /// <summary>
         /// Người sửa
         /// </summary>
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
 
         /// <summary>
         /// Trạng thái insert của entity
         /// </summary>
-        public List<string> Status { get; set; }
+        public List<string>? Status { get; set; }
     }
 }

@@ -18,6 +18,12 @@ namespace PG.Core.Interface.Service
         IEnumerable<TEntity> GetEntities();
 
         /// <summary>
+        /// Lấy dữ liệu paging
+        /// </summary>
+        /// <returns>Danh sách bản ghi</returns>
+        object GetPagingData(PagingParam param);
+
+        /// <summary>
         /// Lấy bản ghi theo Id
         /// </summary>
         /// <param name="Id">Id của đối tượng cần lấy</param>

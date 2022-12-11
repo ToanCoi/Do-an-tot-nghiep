@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PG.Core.Entities
 {
+    [Table("table")]
     public class Table : BaseEntity
     {
         /// <summary>
         /// ID bàn
         /// </summary>
         [PrimaryKey]
-        public int table_id { get; set; }
+        public Guid table_id { get; set; }
 
         /// <summary>
         /// Tầng mấy
@@ -21,6 +23,13 @@ namespace PG.Core.Entities
         [Required]
         [DisplayName("Tầng")]
         public string floor { get; set; }
+
+        /// <summary>
+        /// Tên bàn
+        /// </summary>
+        [Required]
+        [DisplayName("Tên bàn")]
+        public string table_name { get; set; }
 
         /// <summary>
         /// Số ghế tối đa

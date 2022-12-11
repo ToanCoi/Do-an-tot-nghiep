@@ -142,7 +142,7 @@
     <value>Dữ liệu không hợp lệ</value>
   </data>
   <data name="Msg_ServerError" xml:space="preserve">
-    <value>Có lỗi xảy ra, vui lòng liên hệ MISA</value>
+    <value>Có lỗi xảy ra, vui lòng liên hệ NVTOAN</value>
   </data>
   <data name="Msg_SuccessAdd" xml:space="preserve">
     <value>Thêm dữ liệu thành công</value>

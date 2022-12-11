@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PG.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,18 @@ namespace PG.Core.Interface.Repository
         /// </summary>
         /// <returns>List bản ghi lấy được</returns>
         IEnumerable<TEntity> GetEntities();
+
+        /// <summary>
+        /// Lấy bản ghi theo filter
+        /// </summary>
+        /// <returns>List bản ghi lấy được</returns>
+        IEnumerable<TEntity> GetEntitiesFilter(PagingParam pagingParam);
+
+        /// <summary>
+        /// Lấy tổng số bản ghi theo filter
+        /// </summary>
+        /// <returns></returns>
+        int GetTotalFilters(PagingParam pagingParam);
 
         /// <summary>
         /// Lấy bản ghi theo Id

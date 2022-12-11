@@ -36,15 +36,19 @@ namespace PG.API
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 
-            //2.Employee
+            //Employee
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
 
-            //3.Department
+            //Table
+            services.AddScoped<ITableRepository, TableRepository>();
+            services.AddScoped<ITableService, TableService>();
+
+            //Department
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IDepartmentService, DepartmentService>();
 
-            //4.Tax
+            //Tax
             services.AddScoped<ITaxRepository, TaxRepository>();
             services.AddScoped<ITaxService, TaxService>();
 
