@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dFohNnsdNVspzIcHxS0zAT/xNH68RbGPc0YV8oGjpoi5gaphQHWQibrx4s1SKLqKtU1VL8upxaklrLsSbcCYUg==",
+  "dgSpecHash": "OS/zP9IwXWxC1+W+yjChbvTXJnrsABvriXSFAOu8nUV5aQJg7NqHtSqo1Z13CpXpB0+JGprjJF6spoCGT8Pskg==",
   "success": true,
   "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

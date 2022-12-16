@@ -19,6 +19,12 @@ namespace PG.Core.Entities
     [AttributeUsage(AttributeTargets.Property)]
     public class ForeignKey : Attribute { }
 
+    /// <summary>
+    /// Đánh dấu là k insert/update field này
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property)]
+    public class IgnoreField : Attribute { }
+
     public class BaseEntity
     {
         /// <summary>

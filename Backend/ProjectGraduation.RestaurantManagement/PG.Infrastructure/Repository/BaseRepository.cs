@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Linq;
+using PG.Library.Service;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PG.Infrastructure.Repository
 {
@@ -20,16 +23,20 @@ namespace PG.Infrastructure.Repository
         string _connectionString = string.Empty;
         protected IDbConnection _dbConnection = null;
         string _tableName = string.Empty;
+        private readonly IServiceProvider _serviceProvider;
+        private readonly ITypeService _typeService;
         #endregion
 
         #region Constructor
-        public BaseRepository(IConfiguration configuration)
+        public BaseRepository(IConfiguration configuration, IServiceProvider serviceProvider)
         {
             this._configuration = configuration;
             _connectionString = _configuration.GetConnectionString("Development");
             _dbConnection = new MySqlConnection(_connectionString);
             _dbConnection.Open();
             _tableName = ((TableAttribute)Attribute.GetCustomAttribute(typeof(TEntity), typeof(TableAttribute))).Name;
+            _serviceProvider = serviceProvider;
+            _typeService = _serviceProvider.GetRequiredService<ITypeService>();
         }
         #endregion
 
@@ -47,8 +54,10 @@ namespace PG.Infrastructure.Repository
             var idParam = new DynamicParameters();
             idParam.Add($"{_tableName}Id", Id);
 
+            string sql = $"DELETE FROM `{_tableName}` WHERE `{_tableName}_id` = @{_tableName}Id";
+
             //Xóa 
-            rowAffects = _dbConnection.Execute($"Proc_Delete{_tableName}ById", param: idParam, commandType: CommandType.StoredProcedure);
+            rowAffects = _dbConnection.Execute(sql, idParam, commandType: CommandType.Text);
 
             return rowAffects;
                     
@@ -212,9 +221,11 @@ namespace PG.Infrastructure.Repository
             var idParam = new DynamicParameters();
             idParam.Add($"{_tableName}Id", Id);
 
-            var customer = _dbConnection.QueryFirstOrDefault<TEntity>($"SELECT * FROM {_tableName} WHERE {_tableName}_id = @{_tableName}Id", idParam, commandType: CommandType.Text);
+            string sql = $"SELECT * FROM `{_tableName}` WHERE {_tableName}_id = @{_tableName}Id";
 
-            return customer;
+            var entity = _dbConnection.QueryFirstOrDefault<TEntity>(sql, idParam, commandType: CommandType.Text);
+
+            return entity;
         }
 
         /// <summary>
@@ -255,32 +266,22 @@ namespace PG.Infrastructure.Repository
         /// </summary>
         /// <param name="entity">Đối tượng cần thêm mới</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public virtual int InsertEntity(TEntity entity)
+        public virtual object InsertEntity(TEntity entity)
         {
-            int rowAffects = 0;
-            var sql = new StringBuilder();
+            var columns = _typeService.GetTableColumns(entity.GetType());
+            var keyField = _typeService.GetKeyField(entity.GetType());
 
-            var columns = new List<string>();
-            var values = new List<string>();
-            var param = new DynamicParameters();
-            foreach(var prop in entity.GetType().GetProperties(System.Reflection.BindingFlags.Public | 
-                                                                System.Reflection.BindingFlags.Instance | 
-                                                                System.Reflection.BindingFlags.DeclaredOnly)
-            )
+            if(keyField.GetValue(entity).ToString() == Guid.Empty.ToString())
             {
-                columns.Add($"`{prop.Name}`");
-
-                values.Add($"@{prop.Name}");
-
-                param.Add($"@{prop.Name}", prop.GetValue(entity));
+                keyField.SetValue(entity, Guid.NewGuid());
             }
 
-            sql.Append($"INSERT INTO `{_tableName}` ({string.Join(", ", columns)}) VALUES ({string.Join(", ", values)})");
+            var sql = new StringBuilder();
+            sql.Append($"INSERT INTO `{_tableName}` (`{string.Join("`,`", columns)}`) VALUES (@{string.Join(",@", columns)});");
 
-            //Insert
-            rowAffects = _dbConnection.Execute(sql.ToString(), param, commandType: CommandType.Text);
+            var res = _dbConnection.ExecuteScalarAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
 
-            return rowAffects;
+            return res;
         }
 
         /// <summary>
@@ -289,15 +290,21 @@ namespace PG.Infrastructure.Repository
         /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public virtual int UpdateEntity(Guid Id, TEntity entity)
+        public virtual int UpdateEntity(TEntity entity)
         {
             int rowAffects = 0;
 
-            //Mapping dữ liệu
-            var dynamicParam = MappingData(entity);
+            var keyFields = _typeService.GetKeyFields(entity.GetType()).Select(x => x.Name).ToList();
+            string keyName = keyFields?.FirstOrDefault();
+            var columns = _typeService.GetTableColumns(entity.GetType()).Where(x => !keyFields.Contains(x));
+
+
+            var sql = new StringBuilder();
+            sql.Append($"UPDATE `{_tableName}` SET {string.Join(", ", columns.Select(n => $"`{n}` = @{n}"))} WHERE `{keyName}` = @{keyName}");
+
 
             //Insert
-            rowAffects = _dbConnection.Execute($"Proc_Update{_tableName}", dynamicParam, commandType: CommandType.StoredProcedure);
+            rowAffects = _dbConnection.ExecuteAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
 
             return rowAffects;
         }
@@ -348,6 +355,13 @@ namespace PG.Infrastructure.Repository
             return dynamicParam;
         }
 
+        #endregion
+
+        #region Ultility
+        public IDbConnection GetConnection()
+        {
+            return null;
+        }
         #endregion
     }
 }

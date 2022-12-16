@@ -12,7 +12,7 @@ namespace PG.Infrastructure.Repository
     public class DepartmentRepository : BaseRepository<Department>, IDepartmentRepository
     {
         #region Constructor
-        public DepartmentRepository(IConfiguration configuration) : base(configuration)
+        public DepartmentRepository(IConfiguration configuration, IServiceProvider serviceProvider) : base(configuration, serviceProvider)
         {
 
         }

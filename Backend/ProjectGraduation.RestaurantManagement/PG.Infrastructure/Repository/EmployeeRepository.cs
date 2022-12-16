@@ -16,7 +16,7 @@ namespace PG.Infrastructure.Repository
     public class EmployeeRepository : BaseRepository<Employee>, IEmployeeRepository
     {
         #region Constructor
-        public EmployeeRepository(IConfiguration configuration) : base(configuration)
+        public EmployeeRepository(IConfiguration configuration, IServiceProvider serviceProvider) : base(configuration, serviceProvider)
         {
 
         }

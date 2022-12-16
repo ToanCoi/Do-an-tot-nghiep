@@ -28,3 +28,5 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\refint\PG.Infrastructure.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\ref\PG.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Library.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Library.pdb

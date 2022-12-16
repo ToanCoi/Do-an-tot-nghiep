@@ -56,15 +56,14 @@ namespace PG.Core.Interface.Repository
         /// </summary>
         /// <param name="entity">Đối tượng cần thêm mới</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        int InsertEntity(TEntity entity);
+        object InsertEntity(TEntity entity);
 
         /// <summary>
         /// Sửa thông tin một bản ghi
         /// </summary>
-        /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        int UpdateEntity(Guid Id, TEntity entity);
+        int UpdateEntity(TEntity entity);
 
         /// <summary>
         /// Xóa một bản ghi theo Id

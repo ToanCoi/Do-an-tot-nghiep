@@ -5,6 +5,7 @@ using PG.Core.Service;
 using PG.Infrastructure.Repository;
 using PG.API.Middlewares;
 using Microsoft.OpenApi.Models;
+using PG.Library.Service;
 
 namespace PG.API
 {
@@ -32,7 +33,9 @@ namespace PG.API
             });
 
             //Config DI
+
             //1.Base
+            services.AddScoped<ITypeService, TypeService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
 
@@ -43,6 +46,10 @@ namespace PG.API
             //Table
             services.AddScoped<ITableRepository, TableRepository>();
             services.AddScoped<ITableService, TableService>();
+
+            //Dish
+            services.AddScoped<IDishRepository, DishRepository>();
+            services.AddScoped<IDishService, DishService>();
 
             //Department
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();

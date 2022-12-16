@@ -16,7 +16,7 @@ namespace PG.Core.Service
         IEmployeeRepository _employeeRepository;
         #endregion
         #region Constructor
-        public TaxService(ITaxRepository taxRepository, IEmployeeRepository employeeRepository) : base(taxRepository)
+        public TaxService(ITaxRepository taxRepository, IEmployeeRepository employeeRepository, IServiceProvider serviceProvider) : base(taxRepository, serviceProvider: serviceProvider)
         {
             _taxRepository = taxRepository;
             _employeeRepository = employeeRepository;

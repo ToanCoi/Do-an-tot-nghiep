@@ -64,7 +64,6 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.AssemblyInfoInputs.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.AssemblyInfo.cs
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.csproj.CoreCompileInputs.cache
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cs
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\staticwebassets\msbuild.PG.API.Microsoft.AspNetCore.StaticWebAssets.props
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\staticwebassets\msbuild.build.PG.API.props
@@ -80,3 +79,9 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.genruntimeconfig.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\ref\PG.API.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cs
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.staticwebassets.runtime.json

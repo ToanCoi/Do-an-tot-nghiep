@@ -22,7 +22,7 @@ namespace PG.Core.Entities
         /// </summary>
         [Required]
         [DisplayName("Tầng")]
-        public string floor { get; set; }
+        public int floor { get; set; }
 
         /// <summary>
         /// Tên bàn
@@ -34,8 +34,13 @@ namespace PG.Core.Entities
         /// <summary>
         /// Số ghế tối đa
         /// </summary>
-        [Required]
         [DisplayName("Số ghế")]
-        public string max_size { get; set; }
+        public int? max_size { get; set; }
+
+        /// <summary>
+        /// Số ghế tối đa
+        /// </summary>
+        [DisplayName("Số ghế")]
+        public int table_status { get; set; }
     }
 }

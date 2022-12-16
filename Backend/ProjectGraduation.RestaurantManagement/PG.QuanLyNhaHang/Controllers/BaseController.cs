@@ -119,7 +119,7 @@ namespace PG.API.Controllers
         /// <returns>Số dòng bị ảnh hưởng</returns>
         [EnableCors("AllowCROSPolicy")]
         [HttpPost]
-        public IActionResult Post([FromBody] TEntity entity)
+        public virtual IActionResult Post([FromBody] TEntity entity)
         {
             var serviceResult = _baseService.InsertEntity(entity);
 
@@ -142,9 +142,9 @@ namespace PG.API.Controllers
         /// <returns>Số dòng bị ảnh hưởng</returns>
         [EnableCors("AllowCROSPolicy")]
         [HttpPut("{Id}")]
-        public IActionResult Put(Guid Id, TEntity entity)
+        public virtual IActionResult Put(TEntity entity)
         {
-            var serviceResult = _baseService.UpdateEntity(Id, entity);
+            var serviceResult = _baseService.UpdateEntity(entity);
 
             switch (serviceResult.Code)
             {

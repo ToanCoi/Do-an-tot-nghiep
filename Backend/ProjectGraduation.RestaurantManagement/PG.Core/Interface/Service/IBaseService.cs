@@ -56,10 +56,9 @@ namespace PG.Core.Interface.Service
         /// <summary>
         /// Sửa thông tin một bản ghi
         /// </summary>
-        /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        ServiceResult UpdateEntity(Guid Id, TEntity entity);
+        ServiceResult UpdateEntity(TEntity entity);
 
         /// <summary>
         /// Xóa một bản ghi theo Id

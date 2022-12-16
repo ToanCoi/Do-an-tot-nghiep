@@ -15,7 +15,7 @@ namespace PG.Infrastructure.Repository
     public class TaxRepository : BaseRepository<Tax>, ITaxRepository
     {
         #region Constructor
-        public TaxRepository(IConfiguration configuration) : base(configuration)
+        public TaxRepository(IConfiguration configuration, IServiceProvider serviceProvider) : base(configuration, serviceProvider)
         {
 
         }
@@ -123,7 +123,7 @@ namespace PG.Infrastructure.Repository
         /// </summary>
         /// <param name="tax">Kỳ thuế</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public override int InsertEntity(Tax tax)
+        public override object InsertEntity(Tax tax)
         {
             int rowAffects = 0;
 
@@ -168,10 +168,9 @@ namespace PG.Infrastructure.Repository
         /// <summary>
         /// Sửa thông tin một bản ghi
         /// </summary>
-        /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public override int UpdateEntity(Guid Id, Tax tax)
+        public override int UpdateEntity(Tax tax)
         {
             int rowAffects = 0;
 

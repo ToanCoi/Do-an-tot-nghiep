@@ -1,0 +1,12 @@
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\bin\Debug\net6.0\PG.Storage.deps.json
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\bin\Debug\net6.0\PG.Storage.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\bin\Debug\net6.0\PG.Storage.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.csproj.AssemblyReference.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.AssemblyInfoInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.AssemblyInfo.cs
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.csproj.CoreCompileInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\refint\PG.Storage.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\PG.Storage.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Storage\obj\Debug\net6.0\ref\PG.Storage.dll

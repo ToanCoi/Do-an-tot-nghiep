@@ -12,7 +12,7 @@ namespace PG.Core.Service
     public class TableService : BaseService<Table>, ITableService
     {
         #region Constructor
-        public TableService(ITableRepository tableRepository) : base(tableRepository)
+        public TableService(ITableRepository tableRepository, IServiceProvider serviceProvider) : base(tableRepository, serviceProvider)
         {
 
         }

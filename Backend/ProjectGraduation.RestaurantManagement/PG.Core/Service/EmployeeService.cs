@@ -21,7 +21,7 @@ namespace PG.Core.Service
         #endregion
 
         #region Constructor
-        public EmployeeService(IEmployeeRepository employeeRepository) : base(employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository, IServiceProvider serviceProvider) : base(employeeRepository, serviceProvider)
         {
             _employeeRepository = employeeRepository;
         }

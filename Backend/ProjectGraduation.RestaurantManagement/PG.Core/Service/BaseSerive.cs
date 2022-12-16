@@ -24,7 +24,7 @@ namespace PG.Core.Service
         #endregion
 
         #region Constructor
-        public BaseService(IBaseRepository<TEntity> baseRepository)
+        public BaseService(IBaseRepository<TEntity> baseRepository, IServiceProvider serviceProvider)
         {
             _baseRepository = baseRepository;
             _serviceResult = new ServiceResult() { Code = PGCode.ValidData };
@@ -187,15 +187,14 @@ namespace PG.Core.Service
             //Nếu qua validate mà oke thì lưu
             if (_serviceResult.Code == PGCode.ValidData)
             {
-                var rowAffect = _baseRepository.InsertEntity(entity);
-
-                //Trả về code tương ứng
-                if(rowAffect > 0)
+                try
                 {
+                    _baseRepository.InsertEntity(entity);
+
                     _serviceResult.Code = PGCode.Success;
                     _serviceResult.Message = Properties.Resources.Msg_SuccessAdd;
                 }
-                else
+                catch(Exception ex)
                 {
                     _serviceResult.Code = PGCode.Exception;
                     _serviceResult.Message = Properties.Resources.Msg_ServerError;
@@ -211,7 +210,7 @@ namespace PG.Core.Service
         /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public ServiceResult UpdateEntity(Guid Id, TEntity entity)
+        public ServiceResult UpdateEntity(TEntity entity)
         {
             entity.EntityState = EntityState.Update;
             //validate dữ liệu
@@ -223,7 +222,7 @@ namespace PG.Core.Service
             //Nếu qua validate mà oke thì lưu
             if (_serviceResult.Code == PGCode.ValidData)
             {
-                var rowAffect = _baseRepository.UpdateEntity(Id, entity);
+                var rowAffect = _baseRepository.UpdateEntity(entity);
 
                 //Trả về code tương ứng
                 if (rowAffect > 0)

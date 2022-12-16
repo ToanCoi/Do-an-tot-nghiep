@@ -12,7 +12,7 @@ namespace PG.Infrastructure.Repository
     public class TableRepository : BaseRepository<Table>, ITableRepository
     {
         #region Constructor
-        public TableRepository(IConfiguration configuration) : base(configuration)
+        public TableRepository(IConfiguration configuration, IServiceProvider serviceProvider) : base(configuration, serviceProvider)
         {
 
         }

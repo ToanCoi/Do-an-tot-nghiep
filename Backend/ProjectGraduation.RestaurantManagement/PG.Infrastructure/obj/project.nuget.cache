@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "4orQNdcydNAxyShiL2OEo40J4auHbJ7GggY7lFzlUxYq4iUgVmy7gNdkO5Pns7hxM/EckF+MHCRVHFSW8lylDQ==",
+  "dgSpecHash": "jrZ3qEDzQIGrEMak0GKX/RumW72MvQNV+1nSx4I3mNzHq2e+p3cc9tyCu5JaBP54hC8He1hzTtDGg0Hd6nym7Q==",
   "success": true,
   "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MY PC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

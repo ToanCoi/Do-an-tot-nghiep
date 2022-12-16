@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PG.Core.Entities
 {
-    public class Dish
+    [Table("dish")]
+    public class Dish : BaseEntity
     {
         /// <summary>
         /// Id món
@@ -21,7 +24,7 @@ namespace PG.Core.Entities
         [Required]
         [Unique]
         [DisplayName("Tên món")]
-        public string dish_name { get; set; }
+        public string? dish_name { get; set; }
 
 
         /// <summary>
@@ -34,15 +37,32 @@ namespace PG.Core.Entities
         /// Đơn giá
         /// </summary>
         [DisplayName("Đơn giá")]
-        public string price { get; set; }
-
+        public decimal price { get; set; }
 
         /// <summary>
         /// Đơn giá
         /// </summary>
         [DisplayName("Trạng thái")]
-        public string dish_status { get; set; }
+        public int dish_status { get; set; }
 
+        /// <summary>
+        /// Mô tả
+        /// </summary>
+        [Required]
+        [DisplayName("Mô tả")]
+        public string? description { get; set; }
+
+        /// <summary>
+        /// Ảnh truyền lên
+        /// </summary>
+        [IgnoreField]
+        public IFormFile? img_file { get; set; } = null;
+
+        /// <summary>
+        /// Ảnh lấy ra
+        /// </summary>
+        [IgnoreField]
+        public byte[]? dish_img { get; set; }
         /// <summary>
         /// Đơn vị tính
         /// </summary>

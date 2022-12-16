@@ -12,7 +12,7 @@ namespace PG.Core.Service
     public class DepartmentService : BaseService<Department>, IDepartmentService
     {
         #region Constructor
-        public DepartmentService(IDepartmentRepository departmentRepository) : base(departmentRepository)
+        public DepartmentService(IDepartmentRepository departmentRepository, IServiceProvider serviceProvider) : base(departmentRepository, serviceProvider)
         {
 
         }
