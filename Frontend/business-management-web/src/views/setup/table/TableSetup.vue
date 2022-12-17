@@ -24,6 +24,29 @@
     </div>
 
     <TableSetupForm ref="FormDetail" @refreshData="refreshData" />
+
+    <!-- Popup confirm xóa một bản ghi -->
+    <BasePopup
+      v-show="deleteData.showDeletePopup && !deleteData.dataDeleteConflict"
+    >
+      <template #content>
+        <div class="page-icon popup-icon">
+          <div class="popup__icon-warning"></div>
+        </div>
+        <div class="popup__text">
+          Bạn có thực sự muốn xóa Bàn {{ deleteData.deleteString }} không?
+        </div>
+      </template>
+      <template #footer>
+        <div
+          class="btn btn-default btn-cancel"
+          @click="deleteData.showDeletePopup = false"
+        >
+          Không
+        </div>
+        <div class="btn btn-primary" @click="deleteSelectedRecord">Có</div>
+      </template>
+    </BasePopup>
   </div>
 </template> 
     
@@ -36,14 +59,26 @@ import CommonFn from "../../../js/common/CommonFn.js";
 import Table from "../../../components/table/Table.vue";
 import TableSetupForm from "./TableSetupForm.vue";
 import TableAPI from "../../../api/views/setup/TableAPI";
+import BasePopup from "../../../components/BasePopup.vue";
 
 export default {
-  components: { Table, TableSetupForm },
+  components: { Table, TableSetupForm, BasePopup },
 
   setup: (props) => {
     const { proxy } = getCurrentInstance();
 
     const { tableGrid } = tableSetupData();
+
+    const deleteData = reactive({
+      showDeletePopup: false,
+      showMultipleDeletePopup: false,
+      showErrorPopup: false,
+      showNoRecordPopup: false,
+      tableDelete: {},
+      dataDeleteConflict: false,
+      conflictMsg: "",
+      deleteString: "",
+    });
 
     onMounted(() => {
       proxy.getData();
@@ -88,10 +123,10 @@ export default {
      * mở form detail
      */
     function showFormDetail(data) {
-      if(!data.table_id) {
-        data = '';
+      if (!data.table_id) {
+        data = "";
       }
-      
+
       nextTick(() => {
         proxy.$refs.FormDetail.openForm(data);
       });
@@ -104,13 +139,74 @@ export default {
       proxy.getData();
     }
 
-    function clickFunctionItem() {}
+    function clickFunctionItem(fn, item) {
+      switch (fn) {
+        case "Xóa":
+          deleteData.deleteString = "<" + item.table_name + ">";
+          Object.assign(deleteData.tableDelete, item);
+          deleteData.showDeletePopup = true;
+          break;
+      }
+    }
 
-    function changePageNum() {}
+    /**
+     * Xoá bản ghi đã chọn
+     */
+    async function deleteSelectedRecord() {
+      proxy.$store.commit("SHOW_LOADER", true);
 
-    function changePageSize() {}
+      if (!deleteData.dataDeleteConflict) {
+        await TableAPI.delete(deleteData.tableDelete.table_id)
+          .then(async (response) => {
+            if (response.status != 204) {
+              //Tắt popup
+              deleteData.showDeletePopup = false;
 
-    function changeListSelectedRow() {}
+              //Reload dữ liệu
+              await proxy.getData();
+
+              //Hiển thị toast message
+              proxy.$store.commit("SHOW_TOAST", {
+                toastType: "success",
+                toastMessage: Resource.Message.DeleteSuccess,
+              });
+            }
+          })
+          .catch(() => {
+            deleteData.showErrorPopup = true;
+          });
+      }
+
+      proxy.$store.commit("SHOW_LOADER", false);
+    }
+
+    /**
+     * Hàm thay đổi page num
+     */
+    function changePageNum(pageNum) {
+      tableGrid.currentPageNum = pageNum;
+      proxy.getData();
+    }
+
+    /**
+     * Hàm thay đổi page size
+     */
+    function changePageSize(pageSize) {
+      tableGrid.pageSize = pageSize;
+
+      //Reset page nubmer
+      tableGrid.currentPageNum = 1;
+
+      //Lấy lại dữ liệu
+      proxy.getData();
+    }
+
+    /**
+     * Hàm thay đổi list bản ghi được chọn
+     */
+    function changeListSelectedRow(list) {
+      tableGrid.currentSelectedRows = JSON.parse(JSON.stringify(list));
+    }
 
     return {
       Enumeration,
@@ -125,6 +221,8 @@ export default {
       changePageSize,
       changeListSelectedRow,
       getData,
+      deleteData,
+      deleteSelectedRecord,
     };
   },
 };

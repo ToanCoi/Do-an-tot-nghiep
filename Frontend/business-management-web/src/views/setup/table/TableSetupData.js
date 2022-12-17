@@ -9,7 +9,7 @@ export const tableSetupData = () => {
         width: "100%",
         gridHeight: "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
         tableHeight:
-            "calc(100% - 60px)",
+            "calc(100% - 60px - 46px)",
         searchPlaceholder: 'Tìm kiếm theo số bàn, tầng, trạng thái',
         column: [
             {
@@ -42,7 +42,7 @@ export const tableSetupData = () => {
                 functionColumn: true,
             },
         ],
-        functions: ["Nhân bản", "Xóa", "Ngưng sử dụng"],
+        functions: ["Xóa", "Ngưng sử dụng"],
         defaultFunction: "Sửa",
         gridData: [],
         currentSelectedRows: [],
@@ -56,7 +56,6 @@ export const tableSetupData = () => {
         filterValue: null,
         filterColumn: 'table_name, floor, table_status'
     });
-
 
     return {
         tableGrid,

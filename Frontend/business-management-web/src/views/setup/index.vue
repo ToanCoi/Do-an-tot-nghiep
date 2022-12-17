@@ -1,7 +1,7 @@
 <template>
   <dynamic-tab :tabItems="setupTabs" @changeTab="changeTab">
-    <table-setup v-show="currentTab == 'table'"></table-setup>
-    <!-- <dish-setup v-show="currentTab == 'dish'"></dish-setup> -->
+    <table-setup v-if="currentTab == 'table'"></table-setup>
+    <dish-setup v-else-if="currentTab == 'dish'"></dish-setup>
   </dynamic-tab>
 </template> 
   

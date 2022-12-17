@@ -1,10 +1,12 @@
 <template>
   <DxSelectBox
-    ref="DxDateBox"
     :height="customData.height"
     :width="customData.width"
-    :dataSource="customData.displayValues"
-    :onValueChanged="onValueChanged"
+    :dataSource="customData.sources"
+    :value="customData.sources[0].value"
+    display-expr="display"
+    value-expr="value"
+    @value-change="onValueChanged"
     class="dropdown"
     v-model="currentValue"
   />
@@ -26,39 +28,22 @@ export default {
     model: {},
   },
   created() {
-    this.currentValue =
-      this.customData.displayValues[this.customData.keys.indexOf(this.model)];
+    this.currentValue = this.customData.sources[0].value;
   },
   data() {
     return {
       currentValue: "",
     };
   },
-  watch: {
-    model: {
-      deep: true,
-      immediate: true,
-      handler(val) {
-        this.currentValue =
-      this.customData.displayValues[this.customData.keys.indexOf(val)];
-      }
-    },
-  },
   methods: {
-
     /**
      * Hàm xử lý khi thay chọn giá trị
      */
-    onValueChanged() {
-      //Lấy index của giá trị hiện tại
-      let index = this.customData.displayValues.indexOf(this.currentValue);
+    onValueChanged(e) {
 
       //truyền key ra ngoài để thay đổi
-      this.$emit(
-        "valueChanged",
-        this.customData.keys[index]
-      );
-    }
+      this.$emit("valueChanged", e.value);
+    },
   },
 };
 </script>

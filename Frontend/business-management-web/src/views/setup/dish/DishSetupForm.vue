@@ -1,10 +1,10 @@
 <template>
   <form v-if="dataForm.showForm">
-    <div class="form">
+    <div class="form dish-form">
       <div class="form__title">
         <div class="form__title-left">
           <div class="form__title-text">
-            <span class="text-semibold">Thông tin bàn</span>
+            <span class="text-semibold">Thông tin món ăn</span>
           </div>
         </div>
         <div class="form__title-right d-flex">
@@ -21,45 +21,90 @@
         </div>
       </div>
       <div class="form__content" ref="FormData">
-        <div class="form-group">
-          <div class="form-row">
-            <div class="form-col d-flex">
-              <div class="form-item">
-                <FieldInputLabel
-                  MustValidate="true"
-                  :saveValidate="dataForm.saveValidate"
-                  :customData="dataForm.floorInput"
-                  :model="dataForm.tableData.floor"
-                  @invalidData="invalidData"
-                  @updateValueInput="updateValueInput"
-                  @getOriginData="getOriginData"
-                  @checkUnique="checkUnique"
-                  :ref="inputFieldName"
-                />
+        <div class="form__dish-img d-flex">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="form-col d-flex">
+                <div class="form-item">
+                  <FieldInputLabel
+                    MustValidate="true"
+                    :saveValidate="dataForm.saveValidate"
+                    :customData="dataForm.dishNameInput"
+                    :model="dataForm.dishData.dish_name"
+                    @invalidData="invalidData"
+                    @updateValueInput="updateValueInput"
+                    @getOriginData="getOriginData"
+                    @checkUnique="checkUnique"
+                    :ref="inputFieldName"
+                  />
+                </div>
               </div>
-              <div class="form-item">
-                <FieldInputLabel
-                  MustValidate="true"
-                  :saveValidate="dataForm.saveValidate"
-                  :customData="dataForm.tableNameInput"
-                  :model="dataForm.tableData.table_name"
-                  @invalidData="invalidData"
-                  @updateValueInput="updateValueInput"
-                  @getOriginData="getOriginData"
-                  @checkUnique="checkUnique"
-                  :ref="inputFieldName"
-                />
+            </div>
+            <div class="form-row">
+              <div class="form-col d-flex">
+                <div class="form-item">
+                  <label class="text-semibold"
+                    >Loại <span style="color: red">*</span></label
+                  >
+                  <div MustValidate="true">
+                    <ComboBox
+                      tabindex="0"
+                      :saveValidate="saveValidate"
+                      style="margin-top: 4px"
+                      :customData="dataForm.dishTypeComboBox"
+                      :model="dataForm.dishData.dish_type"
+                      @valueChanged="updateValueInput"
+                      @invalidData="invalidData"
+                    />
+                  </div>
+                </div>
+                <div class="form-item">
+                  <FieldInputLabel
+                    MustValidate="true"
+                    :saveValidate="dataForm.saveValidate"
+                    :customData="dataForm.dishPriceInput"
+                    :model="dataForm.dishData.price"
+                    @invalidData="invalidData"
+                    @updateValueInput="updateValueInput"
+                    @getOriginData="getOriginData"
+                    @checkUnique="checkUnique"
+                    :ref="inputFieldName"
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <div class="dish-img" @click="changeDishImage">
+            <span :class="{ 'd-none': dataForm.dishData.dish_img }"
+              >Chọn ảnh</span
+            >
+            <input
+              type="file"
+              accept="image/*"
+              @change="previewFile($event)"
+              ref="ImgInput"
+              class="d-none"
+            />
+            <img
+              :src="dataForm.dishData.dish_img"
+              alt=""
+              width="150"
+              height="150"
+              min-width="150"
+              min-height="150"
+              :class="{ 'd-none': !dataForm.dishData.dish_img }"
+            />
+          </div>
+        </div>
+        <div class="form-group">
           <div class="form-row">
             <div class="form-col">
               <div class="form-item">
                 <FieldInputLabel
                   MustValidate="true"
                   :saveValidate="dataForm.saveValidate"
-                  :customData="dataForm.maxSizeInput"
-                  :model="dataForm.tableData.max_size"
+                  :customData="dataForm.dishDescriptionInput"
+                  :model="dataForm.dishData.description"
                   @invalidData="invalidData"
                   @updateValueInput="updateValueInput"
                   @getOriginData="getOriginData"
@@ -130,33 +175,42 @@
     </BasePopup>
   </form>
 </template>
-
-<script>
+  
+  <script>
 import { reactive, ref, getCurrentInstance } from "vue";
 import Enumeration from "../../../js/common/Enumeration.js";
 import Resource from "../../../js/common/Resource.js";
 import CommonFn from "../../../js/common/CommonFn.js";
-import { useTableSetupFormData } from "./TableSetupFormData";
+import { useDishSetupFormData } from "./DishSetupFormData";
 import Tooltip from "../../../components/Tooltip.vue";
 import BasePopup from "../../../components/BasePopup.vue";
-import TableAPI from "../../../api/views/setup/TableAPI";
+import Combobox from "../../../components/Combobox.vue";
+import DishAPI from "../../../api/views/setup/DishAPI";
 
 export default {
-  components: { Tooltip, BasePopup },
+  components: { Tooltip, BasePopup, Combobox },
 
   setup: (props) => {
     const { proxy } = getCurrentInstance();
-    const { dataForm } = useTableSetupFormData();
+    const { dataForm } = useDishSetupFormData();
 
     /**
      * Hàm mở form
      */
-    async function openForm(table) {
-      if (table) {
-        await TableAPI.getById(table.table_id)
+    async function openForm(dish) {
+      if (dish) {
+        await DishAPI.getById(dish.dish_id)
           .then((res) => {
             if (res.status == 200) {
-              Object.assign(dataForm.tableData, res.data);
+              Object.assign(dataForm.dishData, res.data);
+
+              if (
+                dataForm.dishData.dish_img &&
+                dataForm.dishData.dish_img.length > 0
+              ) {
+                dataForm.dishData.dish_img =
+                  "data:image/jpeg;base64," + dataForm.dishData.dish_img;
+              }
 
               dataForm.formType = Enumeration.FormMode.Edit;
             } else {
@@ -201,7 +255,7 @@ export default {
      * NVTOAN 06/07/2021
      */
     function updateValueInput(key, value) {
-      dataForm.tableData[key] = value;
+      dataForm.dishData[key] = value;
     }
 
     /**
@@ -214,7 +268,7 @@ export default {
       //Nếu thêm thành công
       if (dataForm.allInputValid) {
         dataForm.saveValidate = false;
-        dataForm.tableData = {};
+        dataForm.dishData = {};
       }
     }
 
@@ -240,10 +294,21 @@ export default {
       if (dataForm.allInputValid) {
         proxy.$store.commit("SHOW_LOADER", true);
 
+        // Tạo dataForm để lưu cả ảnh
+        var dataSend = new FormData();
+        for (var key in dataForm.dishData) {
+          if (key != "dish_img") {
+            dataSend.append(key, dataForm.dishData[key]);
+          }
+        }
+
+        for (var pair of dataSend.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
         switch (dataForm.formType) {
           //Nếu là form thêm
           case Enumeration.FormMode.Add:
-            await TableAPI.insert(dataForm.tableData)
+            await DishAPI.insert(dataSend)
               .then((response) => {
                 if (response.data.code == 200) {
                   //Hiển thị toast message
@@ -253,7 +318,7 @@ export default {
                   });
                 }
 
-                dataForm.tableData = {};
+                dataForm.dishData = {};
                 proxy.$emit("refreshData");
               })
               .catch((e) => {
@@ -269,7 +334,7 @@ export default {
             break;
           //Nếu là form sửa
           case Enumeration.FormMode.Edit:
-            await TableAPI.update(dataForm.tableId, dataForm.tableData)
+            await DishAPI.update(dataForm.dishId, dataSend)
               .then((response) => {
                 if (response.data.code == 200) {
                   //Hiển thị toast message
@@ -278,8 +343,8 @@ export default {
                     toastMessage: Resource.Message.EditSuccess,
                   });
                 }
-                
-                dataForm.tableData = {};
+
+                dataForm.dishData = {};
                 proxy.$emit("refreshData");
               })
               .catch(() => {
@@ -366,6 +431,24 @@ export default {
       dataForm.saveValidate = false;
     }
 
+    /**
+     * click vào ô thay đổi ảnh
+     */
+    function changeDishImage() {
+      proxy.$refs.ImgInput.click();
+    }
+
+    /**
+     * xem trước ảnh
+     */
+    function previewFile(e) {
+      dataForm.dishData.img_file = e.target.files[0];
+
+      dataForm.dishData.dish_img = window.URL.createObjectURL(
+        dataForm.dishData.img_file
+      );
+    }
+
     return {
       Enumeration,
       CommonFn,
@@ -381,11 +464,14 @@ export default {
       updateValueInput,
       saveAndAdd,
       saveAndOut,
+      previewFile,
+      changeDishImage,
     };
   },
 };
 </script>
-
-<style lang="scss">
+  
+<style lang="scss" scoped>
 @import "../../../assets/css/common/form.scss";
+@import "./DishSetupForm.scss";
 </style>

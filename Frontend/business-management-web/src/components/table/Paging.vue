@@ -85,6 +85,28 @@ export default {
       timeOut: null,
       pagingDropdown: {
         defaultValue: "",
+        sources: [
+          {
+            display: "10 bản ghi trên 1 trang",
+            value: 10
+          },
+          {
+            display: "20 bản ghi trên 1 trang",
+            value: 20
+          },
+          {
+            display: "30 bản ghi trên 1 trang",
+            value: 30
+          },
+          {
+            display: "50 bản ghi trên 1 trang",
+            value: 50
+          },
+          {
+            display: "100 bản ghi trên 1 trang",
+            value: 100
+          },
+        ],
         displayValues: [
           "10 bản ghi trên 1 trang",
           "20 bản ghi trên 1 trang",
@@ -278,8 +300,8 @@ export default {
     /**
      * Hàm thay đổi page size
      */
-    changePageSize(pageSize) {
-      this.$emit("changePageSize", pageSize);
+    changePageSize(e) {
+      this.$emit("changePageSize", e.value);
     },
   },
 };

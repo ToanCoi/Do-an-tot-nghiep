@@ -3,12 +3,13 @@ import Resource from "../../../js/common/Resource.js";
 import CommonFn from "../../../js/common/CommonFn.js";
 
 export const dishSetupData = () => {
-    
+
     const dishGrid = reactive({
         width: "100%",
-        gridHeight: "calc(100vh - var(--header-height) - 86px - 60px - 16px)",
+        gridHeight: "calc(100vh - var(--header-height) - 39px - 67px - 60px)",
         tableHeight:
-            "calc(100vh - var(--header-height) - 86px - 60px - 16px - 46px)",
+            "calc(100% - 60px - 46px)",
+        searchPlaceholder: 'Tìm kiếm theo tên món, trạng thái',
         column: [
             {
                 selectBoxColumn: true,
@@ -41,7 +42,7 @@ export const dishSetupData = () => {
                 functionColumn: true,
             },
         ],
-        functions: ["Nhân bản", "Xóa", "Ngưng sử dụng"],
+        functions: ["Xóa", "Ngưng Bán"],
         defaultFunction: "Sửa",
         gridData: null,
         currentSelectedRows: [],

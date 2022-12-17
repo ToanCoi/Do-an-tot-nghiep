@@ -1,5 +1,23 @@
 var Enumeration = Enumeration || {};
 
+// Trạng thái của bàn
+Enumeration.TableStatus = {
+    New: 0,
+    InProgress: 1,
+}
+
+// Trạng thái món ăn
+Enumeration.DishStatus = {
+    Ready: 0,
+    OutOfStock: 1,
+}
+
+// Loại món phục vụ
+Enumeration.DishType = {
+    Drink: 0,
+    Meal: 1
+}
+
 //Giới tính
 Enumeration.Gender = {
     Female: 1,
@@ -35,18 +53,6 @@ Enumeration.ObjectMode = {
     Insert: 1,
     Update: 2,
     Delete: 3,
-}
-
-// Trạng thái của bàn
-Enumeration.TableStatus = {
-    New: 0,
-    InProgress: 1,
-}
-
-// Trạng thái món ăn
-Enumeration.DishStatus = {
-    Ready: 0,
-    OutOfStock: 1,
 }
 
 export default Enumeration;

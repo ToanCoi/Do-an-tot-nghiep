@@ -2,8 +2,20 @@ var Resource = Resource || {};
 
 // Trạng thái của bàn
 Resource.TableStatus = {
-    New: "New",
-    InProgress: "In progress",
+    New: "Trống",
+    InProgress: "Đang phục vụ",
+}
+
+// Trạng thái món ăn
+Resource.DishStatus = {
+    Ready: "Có sẵn",
+    OutOfStock: "Ngưng phục vụ",
+}
+
+// Loại món phục vụ
+Resource.DishType = {
+    Drink: "Nước uống",
+    Meal: "Đồ ăn"
 }
 
 //Kiểu dữ liệu của cột trong grid
