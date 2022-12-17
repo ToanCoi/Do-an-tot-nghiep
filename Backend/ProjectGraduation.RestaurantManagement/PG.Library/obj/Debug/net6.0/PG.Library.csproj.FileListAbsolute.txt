@@ -2,7 +2,9 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Library.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Library.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Core.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Storage.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Core.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\bin\Debug\net6.0\PG.Storage.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\obj\Debug\net6.0\PG.Library.csproj.AssemblyReference.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\obj\Debug\net6.0\PG.Library.GeneratedMSBuildEditorConfig.editorconfig
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Library\obj\Debug\net6.0\PG.Library.AssemblyInfoInputs.cache

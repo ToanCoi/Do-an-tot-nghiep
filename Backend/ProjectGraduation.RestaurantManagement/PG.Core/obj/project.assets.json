@@ -44,6 +44,16 @@
             "related": ".xml"
           }
         }
+      },
+      "PG.Storage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PG.Storage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PG.Storage.dll": {}
+        }
       }
     }
   },
@@ -114,11 +124,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "PG.Storage/1.0.0": {
+      "type": "project",
+      "path": "../PG.Storage/PG.Storage.csproj",
+      "msbuildProject": "../PG.Storage/PG.Storage.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.AspNetCore.Http.Features >= 5.0.17"
+      "Microsoft.AspNetCore.Http.Features >= 5.0.17",
+      "PG.Storage >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -147,7 +163,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Storage\\PG.Storage.csproj": {
+              "projectPath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Storage\\PG.Storage.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

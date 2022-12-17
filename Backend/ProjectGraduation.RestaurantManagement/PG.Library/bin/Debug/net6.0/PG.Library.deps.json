@@ -44,10 +44,16 @@
       },
       "PG.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "PG.Storage": "1.0.0"
         },
         "runtime": {
           "PG.Core.dll": {}
+        }
+      },
+      "PG.Storage/1.0.0": {
+        "runtime": {
+          "PG.Storage.dll": {}
         }
       }
     }
@@ -80,6 +86,11 @@
       "hashPath": "system.io.pipelines.5.0.2.nupkg.sha512"
     },
     "PG.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PG.Storage/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -151,7 +151,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "PG.Storage": "1.0.0"
         },
         "compile": {
           "bin/placeholder/PG.Core.dll": {}
@@ -171,6 +172,16 @@
         },
         "runtime": {
           "bin/placeholder/PG.Library.dll": {}
+        }
+      },
+      "PG.Storage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/PG.Storage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PG.Storage.dll": {}
         }
       }
     }
@@ -412,6 +423,11 @@
       "type": "project",
       "path": "../PG.Library/PG.Library.csproj",
       "msbuildProject": "../PG.Library/PG.Library.csproj"
+    },
+    "PG.Storage/1.0.0": {
+      "type": "project",
+      "path": "../PG.Storage/PG.Storage.csproj",
+      "msbuildProject": "../PG.Storage/PG.Storage.csproj"
     }
   },
   "projectFileDependencyGroups": {

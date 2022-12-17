@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gQNPpoOkQjvEQxAhUS2mWajmOhhfRgtahufDTdyzLmY=",
+  "Source": "PG.API.File",
+  "BasePath": "_content/PG.API.File",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

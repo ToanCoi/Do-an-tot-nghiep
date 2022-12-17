@@ -41,6 +41,7 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNh
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.QuanLyNhaHang\obj\Debug\net6.0\ref\PG.API.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\appsettings.Development.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\appsettings.json
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.staticwebassets.runtime.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.exe
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.deps.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.runtimeconfig.json
@@ -48,6 +49,8 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Dapper.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.OpenApi.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\MySqlConnector.dll
@@ -57,13 +60,18 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Core.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Storage.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Core.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Infrastructure.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Storage.pdb
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.csproj.AssemblyReference.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.GeneratedMSBuildEditorConfig.editorconfig
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.AssemblyInfoInputs.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.AssemblyInfo.cs
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.csproj.CoreCompileInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cs
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\staticwebassets\msbuild.PG.API.Microsoft.AspNetCore.StaticWebAssets.props
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\staticwebassets\msbuild.build.PG.API.props
@@ -79,9 +87,3 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.genruntimeconfig.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\ref\PG.API.dll
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.dll
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.Library.pdb
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\obj\Debug\net6.0\PG.API.MvcApplicationPartsAssemblyInfo.cs
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.QuanLyNhaHang\bin\Debug\net6.0\PG.API.staticwebassets.runtime.json

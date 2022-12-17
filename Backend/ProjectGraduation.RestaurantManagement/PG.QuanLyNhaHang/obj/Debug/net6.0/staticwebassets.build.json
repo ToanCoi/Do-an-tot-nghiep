@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SCkzaXykWe8BTOymFkS6wfaQMNGFfQbuwc3oCI1PTYU=",
+  "Hash": "nBHbv8fm36WJPtPSxK55U/zwq1FL4a9BeMnKiSkdAeI=",
   "Source": "PG.API",
   "BasePath": "_content/PG.API",
   "Mode": "Default",
@@ -15,23 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\wwwroot\\DishPics\\DishPics_b585506b-1878-443a-a18f-6e518fda472a.png",
-      "SourceId": "PG.API",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.QuanLyNhaHang\\wwwroot\\",
-      "BasePath": "_content/PG.API",
-      "RelativePath": "DishPics/DishPics_b585506b-1878-443a-a18f-6e518fda472a.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\DishPics\\DishPics_b585506b-1878-443a-a18f-6e518fda472a.png"
-    }
-  ]
+  "Assets": []
 }

@@ -99,7 +99,8 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "PG.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "PG.Storage": "1.0.0"
         },
         "runtime": {
           "PG.Core.dll": {}
@@ -111,6 +112,11 @@
         },
         "runtime": {
           "PG.Library.dll": {}
+        }
+      },
+      "PG.Storage/1.0.0": {
+        "runtime": {
+          "PG.Storage.dll": {}
         }
       }
     }
@@ -190,6 +196,11 @@
       "sha512": ""
     },
     "PG.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PG.Storage/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

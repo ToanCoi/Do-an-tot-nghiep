@@ -18,7 +18,7 @@ namespace PG.Core.Service
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
     {
         #region Declare
-        IBaseRepository<TEntity> _baseRepository;
+        protected IBaseRepository<TEntity> _baseRepository;
         protected ServiceResult _serviceResult;
         List<string> _errorMsg;
         #endregion
@@ -141,7 +141,7 @@ namespace PG.Core.Service
         /// </summary>
         /// <param name="Id">Id của đối tượng cần lấy</param>
         /// <returns>Một bản ghi lấy được theo Id</returns>
-        public TEntity GetEntityById(Guid Id)
+        public virtual TEntity GetEntityById(Guid Id)
         {
             return _baseRepository.GetEntityById(Id);
         }
@@ -210,7 +210,7 @@ namespace PG.Core.Service
         /// <param name="Id">Id của bản ghi cần sửa</param>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
-        public ServiceResult UpdateEntity(TEntity entity)
+        public virtual ServiceResult UpdateEntity(TEntity entity)
         {
             entity.EntityState = EntityState.Update;
             //validate dữ liệu
@@ -246,7 +246,7 @@ namespace PG.Core.Service
         /// </summary>
         /// <param name="entity">Đối tượng cần validate</param>
         /// <returns>Dữ liệu đã đúng hay chưa</returns>
-        private bool Validate(TEntity entity, IEnumerable<TEntity> entities = null, IDictionary<object, List<string>> uniqueProp = null)
+        protected bool Validate(TEntity entity, IEnumerable<TEntity> entities = null, IDictionary<object, List<string>> uniqueProp = null)
         {
             var isValid = true;
             if (entities == null && uniqueProp == null)

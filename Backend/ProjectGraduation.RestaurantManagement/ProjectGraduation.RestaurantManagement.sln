@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PG.Library", "PG.Library\PG
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PG.Storage", "PG.Storage\PG.Storage.csproj", "{B6943A9A-7729-404C-875F-A9C05E531DF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG.FileApi", "PG.FileApi\PG.FileApi.csproj", "{81CFA36A-8F24-4B1C-87BD-7A4C3577839A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{CEF5F13B-D1EE-4020-B84F-9B661A4E9D54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{149DA1E2-4015-42D8-A082-5867E6659101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG.API.File", "PG.API.File\PG.API.File.csproj", "{2185DFF1-5230-43FB-95B8-843E6D135BAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +45,10 @@ Global
 		{B6943A9A-7729-404C-875F-A9C05E531DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6943A9A-7729-404C-875F-A9C05E531DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6943A9A-7729-404C-875F-A9C05E531DF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81CFA36A-8F24-4B1C-87BD-7A4C3577839A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81CFA36A-8F24-4B1C-87BD-7A4C3577839A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81CFA36A-8F24-4B1C-87BD-7A4C3577839A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81CFA36A-8F24-4B1C-87BD-7A4C3577839A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2185DFF1-5230-43FB-95B8-843E6D135BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2185DFF1-5230-43FB-95B8-843E6D135BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2185DFF1-5230-43FB-95B8-843E6D135BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2185DFF1-5230-43FB-95B8-843E6D135BAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,7 @@ using PG.Infrastructure.Repository;
 using PG.API.Middlewares;
 using Microsoft.OpenApi.Models;
 using PG.Library.Service;
+using PG.Storage;
 
 namespace PG.API
 {
@@ -38,6 +39,9 @@ namespace PG.API
             services.AddScoped<ITypeService, TypeService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+
+            //Storage
+            services.AddSingleton<IFileStorageService, FileStorageService>();
 
             //Employee
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
