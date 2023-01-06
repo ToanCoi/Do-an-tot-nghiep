@@ -1,15 +1,25 @@
-import BaseAPIConfig from "./BaseAPIConfig";
+import axios from "axios";
 
 export default class BaseAPI {
+
     constructor() {
         this.controller = null;
+        this.apiName = null;
+        this.baseURL = null;
+    }
+
+    getBaseURL() {
+        if(!this.baseURL) {
+            this.baseURL = `${window.apis[this.apiName]}${this.controller}`;
+        }
     }
 
     /**
      * Hàm lấy tất cả dữ liệu
      */
     getAll() {
-        return BaseAPIConfig.get(`${this.controller}`);
+        this.getBaseURL();
+        return axios.get(`${this.baseURL}`);
     }
 
     /**
@@ -17,8 +27,9 @@ export default class BaseAPI {
      * @param {*} payload 
      * @returns 
      */
-     getPagingData(payload) {
-        return BaseAPIConfig.post(`${this.controller}/list`, payload)
+    getPagingData(payload) {
+        this.getBaseURL();
+        return axios.post(`${this.baseURL}/list`, payload)
     }
 
     /**
@@ -26,7 +37,8 @@ export default class BaseAPI {
      * @param {*} id 
      */
     getById(id) {
-        return BaseAPIConfig.get(`${this.controller}/${id}`)
+        this.getBaseURL();
+        return axios.get(`${this.baseURL}/${id}`)
     }
 
     /**
@@ -35,7 +47,8 @@ export default class BaseAPI {
      * @returns 
      */
     insert(data) {
-        return BaseAPIConfig.post(`${this.controller}`, data);
+        this.getBaseURL();
+        return axios.post(`${this.baseURL}`, data);
     }
 
     /**
@@ -44,8 +57,9 @@ export default class BaseAPI {
      * @param {*} data 
      * @returns 
      */
-    update(id, data) {
-        return BaseAPIConfig.put(`${this.controller}/${id}`, data);
+    update(data) {
+        this.getBaseURL();
+        return axios.put(`${this.baseURL}`, data);
     }
 
     /**
@@ -54,7 +68,8 @@ export default class BaseAPI {
      * @returns 
      */
     delete(id) {
-        return BaseAPIConfig.delete(`${this.controller}/${id}`);
+        this.getBaseURL();
+        return axios.delete(`${this.baseURL}/${id}`);
     }
 
     /**
@@ -63,7 +78,8 @@ export default class BaseAPI {
      * @returns Trạng thái xóa các bản ghi
      */
     multipleDelete(listId) {
-        return BaseAPIConfig.delete(`${this.controller}`, { data: listId });
+        this.getBaseURL();
+        return axios.delete(`${this.baseURL}`, { data: listId });
     }
 
     /**
@@ -72,6 +88,7 @@ export default class BaseAPI {
      * @returns Dữ liệu có bị xung đột không
      */
     checkConflict(id) {
-        return BaseAPIConfig.put(`${this.controller}/Conflict/${id}`);
+        this.getBaseURL();
+        return axios.put(`${this.baseURL}/Conflict/${id}`);
     }
 }

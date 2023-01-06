@@ -14,8 +14,10 @@ Enumeration.DishStatus = {
 
 // Loại món phục vụ
 Enumeration.DishType = {
-    Drink: 0,
-    Meal: 1
+    Appetizer: 0, // Món khai vị
+    MainDish: 1, // Món chính
+    Dessert: 2, // Món tráng miệng
+    Drink: 4,
 }
 
 //Giới tính

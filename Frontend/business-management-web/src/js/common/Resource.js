@@ -14,8 +14,10 @@ Resource.DishStatus = {
 
 // Loại món phục vụ
 Resource.DishType = {
+    Appetizer: 'Món khai vị',
+    MainDish: 'Món chính',
+    Dessert: 'Món tráng miệng',
     Drink: "Nước uống",
-    Meal: "Đồ ăn"
 }
 
 //Kiểu dữ liệu của cột trong grid
@@ -56,9 +58,9 @@ Resource.Message = {
     AddSuccess: "Thêm dữ liệu thành công",
     EditSuccess: "Cập nhật dữ liệu thành công",
     DeleteSuccess: "Xoá dữ liệu thành công",
-    ServerError: "Có lỗi xảy ra, vui lòng liên hệ MISA",
-    GetDepartmentError: "Có lỗi khi lấy phòng ban, vui lòng liên hệ MISA",
-    GetNewCodeError: "Không thể lấy mã mới, vui lòng liên hệ MISA",
+    ServerError: "Có lỗi xảy ra, vui lòng liên hệ NVTOAN",
+    GetDepartmentError: "Có lỗi khi lấy phòng ban, vui lòng liên hệ NVTOAN",
+    GetNewCodeError: "Không thể lấy mã mới, vui lòng liên hệ NVTOAN",
     SelectAtLeastOne: "Vui lòng chọn ít nhất một bản ghi",
     RequiredInputCell: "Vui lòng điền đầy đủ thông tin lương,bảo hiểm",
     DataConflict: "Không thể xoá dữ liệu đã được liên kết, vui lòng kiểm tra lại"

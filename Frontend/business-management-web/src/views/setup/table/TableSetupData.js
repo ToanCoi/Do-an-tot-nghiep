@@ -54,7 +54,8 @@ export const tableSetupData = () => {
         maxPageNumDisplay: 5,
         totalRecord: 0,
         filterValue: null,
-        filterColumn: 'table_name, floor, table_status'
+        filterColumn: null,
+        sort: 'created_date DESC, floor, table_status',
     });
 
     return {

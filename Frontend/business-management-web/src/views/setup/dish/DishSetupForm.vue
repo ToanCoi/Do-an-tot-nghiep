@@ -240,6 +240,7 @@ export default {
         dataForm.showConfirmPopup = true;
       } else {
         dataForm.showForm = false;
+        dataForm.dishData = {};
       }
     }
 
@@ -297,7 +298,11 @@ export default {
         // Tạo dataForm để lưu cả ảnh
         var dataSend = new FormData();
         for (var key in dataForm.dishData) {
-          if (key != "dish_img") {
+          if (
+            key != "dish_img" &&
+            dataForm.dishData[key] !== null &&
+            typeof dataForm.dishData[key] !== "undefined"
+          ) {
             dataSend.append(key, dataForm.dishData[key]);
           }
         }
@@ -334,7 +339,7 @@ export default {
             break;
           //Nếu là form sửa
           case Enumeration.FormMode.Edit:
-            await DishAPI.update(dataForm.dishId, dataSend)
+            await DishAPI.update(dataSend)
               .then((response) => {
                 if (response.data.code == 200) {
                   //Hiển thị toast message

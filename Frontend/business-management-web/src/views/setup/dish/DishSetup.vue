@@ -53,19 +53,20 @@ export default {
       proxy.$store.commit("SHOW_LOADER", true);
 
       await DishAPI.getPagingData({
-        PageSize: proxy.dishGrid.pageSize,
-        CurrentPage: proxy.dishGrid.currentPageNum,
-        FilterValue: proxy.dishGrid.filterValue,
-        FilterColumn: proxy.dishGrid.filterColumn,
+        PageSize: dishGrid.pageSize,
+        CurrentPage: dishGrid.currentPageNum,
+        FilterValue: dishGrid.filterValue,
+        FilterColumn: dishGrid.filterColumn,
+        Sort: dishGrid.sort
       })
         .then((response) => {
-          proxy.dishGrid.gridData = response.data.data;
-          proxy.dishGrid.totalRecord = response.data.totalRecord;
-          proxy.dishGrid.totalPage = response.data.totalPage;
+          dishGrid.gridData = response.data.data;
+          dishGrid.totalRecord = response.data.totalRecord;
+          dishGrid.totalPage = response.data.totalPage;
         })
         .catch(() => {
           proxy.showErrorPopup = true;
-          proxy.dishGrid.gridData = [];
+          dishGrid.gridData = [];
           proxy.$store.commit("SHOW_LOADER", false);
         });
 

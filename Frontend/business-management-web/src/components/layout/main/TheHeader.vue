@@ -5,9 +5,7 @@
         <div class="header__icon-small-nav"></div>
       </div>
       <div class="header__branch">
-        <span class="header__branch-name text-uppercase"
-          >Nhà hàng NVTOAN</span
-        >
+        <span class="header__branch-name text-uppercase">Nhà hàng NVTOAN</span>
         <div class="page-icon">
           <div class="header__icon-branch-work"></div>
         </div>
@@ -25,8 +23,17 @@
       <div class="header__user">
         <div class="header__icon-user"></div>
         <div class="user__name text-semibold">Nguyễn Văn Toàn</div>
-        <div class="page-icon">
+        <div class="page-icon" @click="showManagerAccount = true">
           <div class="header__icon-user-menu"></div>
+        </div>
+        <div
+          v-show="showManagerAccount"
+          @focusout="showManagerAccount = false"
+          class="user__manager"
+        >
+          <div class="user__logout">
+            <span class="text-semibold" @click="logout">Đăng xuất</span>
+          </div>
         </div>
       </div>
     </div>
@@ -49,6 +56,7 @@ export default {
         width: "calc(var(--column-width) * 0.8)",
         height: "32px",
       },
+      showManagerAccount: false,
     };
   },
   mounted() {
@@ -94,6 +102,12 @@ export default {
      */
     valueChanged(value) {
       this.$store.commit("CHANGE_YEAR", value);
+    },
+
+    logout() {
+      localStorage.clear();
+
+      this.$router.push({ name: "Login" });
     }
   },
 };

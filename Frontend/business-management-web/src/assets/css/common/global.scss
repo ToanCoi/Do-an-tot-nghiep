@@ -47,7 +47,7 @@
 
 body {
     font-family: 'Notosans-regular' !important;
-    font-size: var(--font-size-normal);
+    font-size: var(--font-size-normal) !important;
     color: var(--text-color);
 }
 
@@ -60,6 +60,10 @@ body {
 /* text */
 .text-right {
     text-align: right;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .text-center {
@@ -145,6 +149,22 @@ $unit-size: 8px;
 
     .mb-#{$var} {
         margin-bottom: #{$var * $unit-size} !important;
+    }
+
+    .pr-#{$var} {
+        padding-right: #{$var * $unit-size} !important;
+    }
+
+    .pl-#{$var} {
+        padding-left: #{$var * $unit-size} !important;
+    }
+
+    .pt-#{$var} {
+        padding-top: #{$var * $unit-size} !important;
+    }
+
+    .pb-#{$var} {
+        padding-bottom: #{$var * $unit-size} !important;
     }
 }
 

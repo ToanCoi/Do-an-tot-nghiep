@@ -13,6 +13,12 @@ export const store = createStore({
 
     //Năm cần xem dữ liệu
     dataYear: null,
+
+    //token
+    token: null,
+
+    //user
+    user: null
   },
   mutations: {
     /**
@@ -50,8 +56,17 @@ export const store = createStore({
      */
     CHANGE_YEAR(state, year) {
       state.dataYear = year;
-    }
+    },
     
+    changeToken(state, token) {
+      localStorage.setItem('token', JSON.stringify(token));
+      state.token = token;
+    },
+
+    changeUser(state, user) {
+      localStorage.setItem('user', JSON.stringify(user));
+      state.token = user
+    },
   },
   getters: {
     //Dữ liệu custom toast message
@@ -72,6 +87,14 @@ export const store = createStore({
     //Năm cần xem dữ liệu
     dataYear: state => {
       return state.dataYear;
+    },
+
+    token: state => {
+      return state.token ?? localStorage.getItem('token');
+    },
+
+    user: state => {
+      return state.user;
     }
-  }
+  },
 });

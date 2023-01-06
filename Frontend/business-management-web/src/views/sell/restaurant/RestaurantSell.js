@@ -1,5 +1,5 @@
 
-export const contentSellData = () => {
+export const restaurantSellData = () => {
 
     const menuTabItems = [{
         ID: 1,

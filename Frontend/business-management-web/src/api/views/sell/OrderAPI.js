@@ -4,7 +4,7 @@ class TableAPI extends BusinessAPI {
     constructor() {
         super();
 
-        this.controller = "api/v1/Tables";
+        this.controller = "api/v1/Orders";
     }
 
 }

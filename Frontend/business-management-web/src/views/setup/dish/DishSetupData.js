@@ -23,8 +23,15 @@ export const dishSetupData = () => {
                 fieldName: "dish_name",
             },
             {
+                columnName: "",
+                fieldName: "dish_img",
+                imgColumn: true
+            },
+            {
                 columnName: "Loại",
                 fieldName: "dish_type",
+                dataType: Resource.DataTypeColumn.Enum,
+                enumName: "DishType",
             },
             {
                 columnName: "Đơn giá",
@@ -54,6 +61,7 @@ export const dishSetupData = () => {
         maxPageNumDisplay: 5,
         totalRecord: 0,
         filterValue: null,
+        sort: "created_date DESC"
     });
 
 

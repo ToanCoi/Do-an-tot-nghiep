@@ -35,6 +35,27 @@
     margin: 0 5px 0 20px;
 }
 
+.user__manager {
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+    width: 200px;
+}
+
+.user__logout {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.user__logout:hover {
+    background: #f4f5f8;
+}
+
 /* icon */
 .header__icon-small-nav {
     background: url('../../images/Sprites.64af8f61.svg') no-repeat -847px -35px;

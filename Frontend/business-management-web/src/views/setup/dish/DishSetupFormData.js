@@ -21,12 +21,16 @@ export const useDishSetupFormData = () => {
             labelText: "Đơn vị",
             defaultValue: "",
             displayValues: [
-                Resource.DishType.Meal,
-                Resource.DishType.Drink
+                Resource.DishType.Appetizer,
+                Resource.DishType.MainDish,
+                Resource.DishType.Drink,
+                Resource.DishType.Dessert
             ],
             keys: [
-                Enumeration.DishType.Meal,
-                Enumeration.DishType.Drink
+                Enumeration.DishType.Appetizer,
+                Enumeration.DishType.MainDish,
+                Enumeration.DishType.Drink,
+                Enumeration.DishType.Dessert
             ],
             width: "calc(var(--column-width) * 2)",
             height: "37px",

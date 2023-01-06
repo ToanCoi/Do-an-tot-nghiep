@@ -12,10 +12,9 @@
           ></div>
         </div>
         <a href="#" class="logo" v-show="!smallNav">
-          <img
-            src=""
-            alt=""
-          />
+          <!-- <img
+            src="/src/assets/images/VueLogo.png"
+          /> -->
         </a>
       </div>
       <div class="nav__list">

@@ -8,22 +8,30 @@ import FieldInputLabel from './components/FieldInputLabel.vue'
 import ComboBox from './components/Combobox.vue'
 import Dropdown from './components/Dropdown.vue'
 
-import Resource from './js/common/Resource'
-import Enumeration from './js/common/Enumeration'
-import CommonFn from './js/common/CommonFn'
+import { pluginInstall } from "./js/common/plugin";
+
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+import { faUser, faLock, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(faUser, faLock, faChevronRight)
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
 app.use(store);
-app.use(Resource);
-app.use(Enumeration)
-app.use(CommonFn);
 
 //Component
 app.component('FieldInputLabel', FieldInputLabel);
 app.component('ComboBox', ComboBox);
 app.component('Dropdown', Dropdown);
+app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount("#app");

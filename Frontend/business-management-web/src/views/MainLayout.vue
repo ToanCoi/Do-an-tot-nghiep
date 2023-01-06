@@ -1,56 +1,53 @@
 <template>
-  <router-view></router-view>
-  <div class="loader" v-show="showLoader">
-    <Loader />
-  </div>
-  <ToastMessage ref="ToastMessage" :customData="customToast" />
-  <!-- Popup thông báo lỗi phía server -->
-  <BasePopup class="popup-error" v-show="errorPopupData.showErrorPopup">
-    <template #content>
-      <div class="page-icon popup-icon">
-        <div
-          :class="
-            errorPopupData.type == Resource.Popup.Warning
-              ? 'popup__icon-warning'
-              : 'popup__icon-danger'
-          "
-        ></div>
-      </div>
-      <div class="popup__text">
-        {{ errorPopupData.errorMessage }}
-      </div>
-    </template>
-    <template #footer>
-      <div class="footer__btn d-flex flex-center" style="width: 100%">
-        <div
-          class="btn btn-primary"
-          @click="errorPopupData.showErrorPopup = false"
-        >
-          {{
-            errorPopupData.type == Resource.Popup.Warning ? "Đồng ý" : "Đóng"
-          }}
-        </div>
-      </div>
-    </template>
-  </BasePopup>
-
-  <!-- <div class="wrapper" id="app" :class="{ 'nav-small': smallNav }">
+  <div class="wrapper" id="app" :class="{ 'nav-small': smallNav }">
     <Navbar ref="Navbar" :customData="navbarData" @makeNavBig="makeNavBig" />
     <Main ref="Main" @makeNavSmall="makeNavSmall" />
-    
-  </div> -->
+    <div class="loader" v-show="showLoader">
+      <Loader />
+    </div>
+    <ToastMessage ref="ToastMessage" :customData="customToast" />
+    <!-- Popup thông báo lỗi phía server -->
+    <BasePopup class="popup-error" v-show="errorPopupData.showErrorPopup">
+      <template #content>
+        <div class="page-icon popup-icon">
+          <div
+            :class="
+              errorPopupData.type == Resource.Popup.Warning
+                ? 'popup__icon-warning'
+                : 'popup__icon-danger'
+            "
+          ></div>
+        </div>
+        <div class="popup__text">
+          {{ errorPopupData.errorMessage }}
+        </div>
+      </template>
+      <template #footer>
+        <div class="footer__btn d-flex flex-center" style="width: 100%">
+          <div
+            class="btn btn-primary"
+            @click="errorPopupData.showErrorPopup = false"
+          >
+            {{
+              errorPopupData.type == Resource.Popup.Warning ? "Đồng ý" : "Đóng"
+            }}
+          </div>
+        </div>
+      </template>
+    </BasePopup>
+  </div>
 </template>
-
-<script>
-import Navbar from "./components/layout/TheNavbar.vue";
-import Main from "./components/layout/TheMain.vue";
-import Loader from "./components/Loader.vue";
-import ToastMessage from "./components/ToastMessage.vue";
-import BasePopup from "./components/BasePopup.vue";
-import Resource from "./js/common/Resource";
+  
+  <script>
+import Navbar from "../components/layout/TheNavbar.vue";
+import Main from "../components/layout/TheMain.vue";
+import Loader from "../components/Loader.vue";
+import ToastMessage from "../components/ToastMessage.vue";
+import BasePopup from "../components/BasePopup.vue";
+import Resource from "../js/common/Resource";
 
 export default {
-  name: "App",
+  name: "MainLayout",
   components: {
     Navbar,
     Main,
@@ -162,13 +159,13 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
+  
+  <style lang="scss">
 @import "/src/assets/css/variable.scss";
-@import url("./assets/css/common/reset.css");
-@import "./assets/css/common/global.scss";
-@import "./assets/css/common/common.scss";
-@import "./assets/css/common/button.scss";
+@import url("/src/assets/css/common/reset.css");
+@import "/src/assets/css/common/global.scss";
+@import "/src/assets/css/common/common.scss";
+@import "/src/assets/css/common/button.scss";
 
 .nav-small {
   --nav-width: 52px;

@@ -269,7 +269,7 @@ export default {
             break;
           //Nếu là form sửa
           case Enumeration.FormMode.Edit:
-            await TableAPI.update(dataForm.tableId, dataForm.tableData)
+            await TableAPI.update(dataForm.tableData)
               .then((response) => {
                 if (response.data.code == 200) {
                   //Hiển thị toast message

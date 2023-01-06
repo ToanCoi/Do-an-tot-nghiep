@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="table" :style="{ 'height': customData.tableHeight }">
+    <div class="table" :style="{ height: customData.tableHeight }">
       <table>
         <thead>
           <tr>
@@ -233,6 +233,16 @@
                 v-model="item[col.fieldName]"
                 v-mask="money"
               />
+              <div v-else-if="col.imgColumn" class="img-cell">
+                <img
+                  :src="'data:image/jpeg;base64,' + item[col.fieldName]"
+                  alt=""
+                  width="40"
+                  height="40"
+                  min-width="40"
+                  min-height="40"
+                />
+              </div>
               <span v-else>
                 {{
                   col.dataType == Resource.DataTypeColumn.OrderNumber

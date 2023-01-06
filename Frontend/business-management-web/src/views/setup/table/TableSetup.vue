@@ -88,19 +88,20 @@ export default {
       proxy.$store.commit("SHOW_LOADER", true);
 
       await TableAPI.getPagingData({
-        PageSize: proxy.tableGrid.pageSize,
-        CurrentPage: proxy.tableGrid.currentPageNum,
-        FilterValue: proxy.tableGrid.filterValue,
-        FilterColumn: proxy.tableGrid.filterColumn,
+        PageSize: tableGrid.pageSize,
+        CurrentPage: tableGrid.currentPageNum,
+        FilterValue: tableGrid.filterValue,
+        FilterColumn: tableGrid.filterColumn,
+        Sort: tableGrid.sort
       })
         .then((response) => {
-          proxy.tableGrid.gridData = response.data.data;
-          proxy.tableGrid.totalRecord = response.data.totalRecord;
-          proxy.tableGrid.totalPage = response.data.totalPage;
+          tableGrid.gridData = response.data.data;
+          tableGrid.totalRecord = response.data.totalRecord;
+          tableGrid.totalPage = response.data.totalPage;
         })
         .catch(() => {
           proxy.showErrorPopup = true;
-          proxy.tableGrid.gridData = [];
+          tableGrid.gridData = [];
           proxy.$store.commit("SHOW_LOADER", false);
         });
 
