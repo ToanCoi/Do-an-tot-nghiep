@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PD/8bKIsJfcDiuizEfAqKBc1UW5Yzls229F7MHXQ2LY=",
+  "Source": "PG.API.Auth",
+  "BasePath": "_content/PG.API.Auth",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

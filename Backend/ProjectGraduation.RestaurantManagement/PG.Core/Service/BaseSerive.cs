@@ -108,7 +108,7 @@ namespace PG.Core.Service
         /// Lấy toàn bộ bản ghi
         /// </summary>
         /// <returns>List bản ghi lấy được</returns>
-        public IEnumerable<TEntity> GetEntities()
+        public virtual IEnumerable<TEntity> GetEntities()
         {
             return _baseRepository.GetEntities();
         }
@@ -117,10 +117,10 @@ namespace PG.Core.Service
         /// Lấy dữ liệu paging
         /// </summary>
         /// <returns>Danh sách bản ghi</returns>
-        public object GetPagingData(PagingParam param)
+        public virtual object GetPagingData(PagingParam param)
         {
             //Lấy dữ liệu về
-            var employees = _baseRepository.GetEntitiesFilter(param);
+            var entities = _baseRepository.GetEntitiesFilter(param);
 
             //Lấy tổng số bản ghi
             var totalRecord = _baseRepository.GetTotalFilters(param);
@@ -130,7 +130,7 @@ namespace PG.Core.Service
             {
                 TotalRecord = totalRecord,
                 TotalPage = param.PageSize != 0 ? Math.Ceiling((decimal)((decimal)totalRecord / param.PageSize)) : 1,
-                data = employees
+                data = entities
             };
 
             return data;
@@ -177,7 +177,7 @@ namespace PG.Core.Service
         /// <returns>Số dòng bị ảnh hưởng</returns>
         public virtual ServiceResult InsertEntity(TEntity entity)
         {
-            entity.EntityState = EntityState.Add;
+            entity.EntityState = (int)EntityState.Add;
             //validate dữ liệu
             this.Validate(entity);
 
@@ -205,6 +205,40 @@ namespace PG.Core.Service
         }
 
         /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng cần thêm mới</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        public virtual ServiceResult InsertEntity(TEntity entity, Type type)
+        {
+            entity.EntityState = (int)EntityState.Add;
+            //validate dữ liệu
+            this.Validate(entity);
+
+            //Dữ liệu trả về
+            _serviceResult.Data = entity;
+
+            //Nếu qua validate mà oke thì lưu
+            if (_serviceResult.Code == PGCode.ValidData)
+            {
+                try
+                {
+                    _baseRepository.InsertEntity(entity, type);
+
+                    _serviceResult.Code = PGCode.Success;
+                    _serviceResult.Message = Properties.Resources.Msg_SuccessAdd;
+                }
+                catch (Exception ex)
+                {
+                    _serviceResult.Code = PGCode.Exception;
+                    _serviceResult.Message = Properties.Resources.Msg_ServerError;
+                }
+            }
+
+            return _serviceResult;
+        }
+
+        /// <summary>
         /// Sửa thông tin một bản ghi
         /// </summary>
         /// <param name="Id">Id của bản ghi cần sửa</param>
@@ -212,7 +246,7 @@ namespace PG.Core.Service
         /// <returns>Số dòng bị ảnh hưởng</returns>
         public virtual ServiceResult UpdateEntity(TEntity entity)
         {
-            entity.EntityState = EntityState.Update;
+            entity.EntityState = (int)EntityState.Update;
             //validate dữ liệu
             this.Validate(entity);
 
@@ -360,8 +394,8 @@ namespace PG.Core.Service
             if (entitySearch != null)
             {
                 //Nếu là form thêm hoặc là form sửa nhưng id không giống nhau
-                if (entity.EntityState == EntityState.Add ||
-                    (entity.EntityState == EntityState.Update && this.GetKeyProperty(entity).GetValue(entity).ToString() != this.GetKeyProperty(entitySearch).GetValue(entitySearch).ToString()))
+                if (entity.EntityState == (int)EntityState.Add ||
+                    (entity.EntityState == (int)EntityState.Update && this.GetKeyProperty(entity).GetValue(entity).ToString() != this.GetKeyProperty(entitySearch).GetValue(entitySearch).ToString()))
                 {
                     _errorMsg.Add(String.Format(Properties.Resources.Msg_DataNotUnique, displayName));
                     return false;

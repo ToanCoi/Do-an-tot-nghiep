@@ -13,6 +13,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 using PG.Library.Service;
 using Microsoft.Extensions.DependencyInjection;
+using PG.Core.Enum;
 
 namespace PG.Infrastructure.Repository
 {
@@ -146,11 +147,17 @@ namespace PG.Infrastructure.Repository
         {
             var sql = new StringBuilder();
             var where = this.ParseWhere(pagingParam);
+            var sort = this.ParseSort(pagingParam.Sort);
 
             sql.Append($"SELECT * FROM `{_tableName}`");
             if(where != null)
             {
                 sql.Append(where);
+            }
+
+            if(sort != null)
+            {
+                sql.Append(sort);
             }
 
             if(pagingParam.PageSize > 0)
@@ -212,6 +219,21 @@ namespace PG.Infrastructure.Repository
         }
 
         /// <summary>
+        /// Build câu order by
+        /// </summary>
+        /// <param name="pagingParam"></param>
+        /// <returns></returns>
+        protected string ParseSort(string sort)
+        {
+            if(String.IsNullOrWhiteSpace(sort))
+            {
+                return null;
+            }
+
+            return $" ORDER BY {sort}";
+        }
+
+        /// <summary>
         /// Lấy bản ghi theo Id
         /// </summary>
         /// <param name="Id">Id của đối tượng cần lấy</param>
@@ -268,16 +290,67 @@ namespace PG.Infrastructure.Repository
         /// <returns>Số dòng bị ảnh hưởng</returns>
         public virtual object InsertEntity(TEntity entity)
         {
+
             var columns = _typeService.GetTableColumns(entity.GetType());
             var keyField = _typeService.GetKeyField(entity.GetType());
 
-            if(keyField.GetValue(entity).ToString() == Guid.Empty.ToString())
+            if(keyField != null && keyField.GetValue(entity).ToString() == Guid.Empty.ToString())
             {
                 keyField.SetValue(entity, Guid.NewGuid());
             }
+            entity.created_date = DateTime.Now;
 
             var sql = new StringBuilder();
             sql.Append($"INSERT INTO `{_tableName}` (`{string.Join("`,`", columns)}`) VALUES (@{string.Join(",@", columns)});");
+
+            var res = _dbConnection.ExecuteScalarAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
+
+            return res;
+        }
+
+        /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng cần thêm mới</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        public virtual object InsertEntity(TEntity entity, Type type)
+        {
+
+            var columns = _typeService.GetTableColumns(type);
+            var keyField = _typeService.GetKeyField(type);
+
+            if (keyField != null && keyField.GetValue(entity).ToString() == Guid.Empty.ToString())
+            {
+                keyField.SetValue(entity, Guid.NewGuid());
+            }
+            entity.created_date = DateTime.Now;
+
+            var sql = new StringBuilder();
+            sql.Append($"INSERT INTO `{_tableName}` (`{string.Join("`,`", columns)}`) VALUES (@{string.Join(",@", columns)});");
+
+            var res = _dbConnection.ExecuteScalarAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
+
+            return res;
+        }
+
+        /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng cần thêm mới</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        public virtual object InsertEntity(TEntity entity, string tableName)
+        {
+            var columns = _typeService.GetTableColumns(entity.GetType());
+            var keyField = _typeService.GetKeyField(entity.GetType());
+
+            if (keyField.GetValue(entity).ToString() == Guid.Empty.ToString())
+            {
+                keyField.SetValue(entity, Guid.NewGuid());
+            }
+            entity.created_date = DateTime.Now;
+
+            var sql = new StringBuilder();
+            sql.Append($"INSERT INTO `{tableName}` (`{string.Join("`,`", columns)}`) VALUES (@{string.Join(",@", columns)});");
 
             var res = _dbConnection.ExecuteScalarAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
 
@@ -297,6 +370,7 @@ namespace PG.Infrastructure.Repository
             var keyFields = _typeService.GetKeyFields(entity.GetType()).Select(x => x.Name).ToList();
             string keyName = keyFields?.FirstOrDefault();
             var columns = _typeService.GetTableColumns(entity.GetType()).Where(x => !keyFields.Contains(x));
+            entity.update_date = DateTime.Now;
 
 
             var sql = new StringBuilder();

@@ -59,6 +59,13 @@ namespace PG.Core.Interface.Repository
         object InsertEntity(TEntity entity);
 
         /// <summary>
+        /// Thêm mới một bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng cần thêm mới</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        object InsertEntity(TEntity entity, Type type);
+
+        /// <summary>
         /// Sửa thông tin một bản ghi
         /// </summary>
         /// <param name="entity">Đối tượng có những thông tin cần sửa</param>

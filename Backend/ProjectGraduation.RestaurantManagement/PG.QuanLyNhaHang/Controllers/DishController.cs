@@ -13,13 +13,13 @@ namespace PG.API.Controllers
     {
         private readonly IDishService _dishService;
         public static IWebHostEnvironment _webHostEnvironment;
-        #region Constructor
+
+
         public DishController(IDishService dishService, IWebHostEnvironment webHostEnvironment) : base(dishService)
         {
             _webHostEnvironment = webHostEnvironment;
             _dishService = dishService;
         }
-        #endregion
 
         #region Method
         /// <summary>
@@ -31,7 +31,17 @@ namespace PG.API.Controllers
         [HttpPost]
         public override IActionResult Post([FromForm] Dish dish)
         {
-            return base.Post(dish);
+            var serviceResult = _dishService.InsertEntity(dish);
+
+            switch (serviceResult.Code)
+            {
+                case PGCode.Exception:
+                    return StatusCode(500, serviceResult);
+                case PGCode.InvalidData:
+                    return BadRequest(serviceResult);
+                default:
+                    return StatusCode(201, serviceResult);
+            }
         }
 
         /// <summary>
@@ -41,10 +51,20 @@ namespace PG.API.Controllers
         /// <param name="entity">Đối tượng với thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
         [EnableCors("AllowCROSPolicy")]
-        [HttpPut("{Id}")]
+        [HttpPut]
         public override IActionResult Put([FromForm] Dish dish)
         {
-            return base.Post(dish);
+            var serviceResult = _dishService.UpdateEntity(dish);
+
+            switch (serviceResult.Code)
+            {
+                case PGCode.Exception:
+                    return StatusCode(500, serviceResult);
+                case PGCode.InvalidData:
+                    return BadRequest(serviceResult);
+                default:
+                    return Ok(serviceResult);
+            }
         }
 
 

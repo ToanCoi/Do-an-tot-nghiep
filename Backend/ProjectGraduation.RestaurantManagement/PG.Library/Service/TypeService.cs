@@ -16,10 +16,16 @@ namespace PG.Library.Service
             return this.GetKeyFields(type)?.FirstOrDefault();
         }
 
-        public List<PropertyInfo> GetKeyFields(Type type)
+        public List<PropertyInfo>? GetKeyFields(Type type)
         {
             var keys = this.GetProperties<PrimaryKey>(type);
-            return keys.Select(x => x.Key).ToList();
+
+            if(keys != null)
+            {
+                return keys.Select(x => x.Key).ToList();
+            }
+
+            return null;
         }
 
         public List<string> GetTableColumns(Type type)
@@ -30,8 +36,7 @@ namespace PG.Library.Service
             }
 
             var columns = new List<string>();
-            var prs = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-            foreach ( var p in prs)
+            foreach ( var p in type.GetProperties())
             {
                 // Loại ignoreField
                 var ignore = p.GetCustomAttribute<IgnoreField>(true);

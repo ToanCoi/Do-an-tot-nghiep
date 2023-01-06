@@ -30,31 +30,33 @@ namespace PG.Core.Entities
         /// <summary>
         /// Trạng thái của Entity
         /// </summary>
-        public EntityState EntityState { get; set; }
+        [IgnoreField]
+        public int EntityState { get; set; }
 
         /// <summary>
         /// Ngày tạo
         /// </summary>
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? created_date { get; set; }
 
         /// <summary>
         /// Người tạo
         /// </summary>
-        public string? CreatedBy { get; set; }
+        public string? created_by { get; set; }
 
         /// <summary>
         /// Ngày sửa
         /// </summary>
-        public DateTime? ModifiedDate { get; set; }
+        public DateTime? update_date { get; set; }
 
         /// <summary>
         /// Người sửa
         /// </summary>
-        public string? ModifiedBy { get; set; }
+        public string? update_by { get; set; }
 
         /// <summary>
         /// Trạng thái insert của entity
         /// </summary>
+        [IgnoreField]
         public List<string>? Status { get; set; }
     }
 }

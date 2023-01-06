@@ -55,6 +55,13 @@ namespace PG.API
             services.AddScoped<IDishRepository, DishRepository>();
             services.AddScoped<IDishService, DishService>();
 
+            //Order
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+
+            //OrderDish
+            services.AddScoped<IOrderDishRepository, OrderDishRepository>();
+
             //Department
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IDepartmentService, DepartmentService>();

@@ -27,4 +27,15 @@ namespace PG.Core.Enum
         Update = 2,
         Delete = 3
     }
+
+    /// <summary>
+    /// Trạng thái entity
+    /// </summary>
+    public enum Role
+    {
+        Manager = 0,
+        Employee = 1,
+        Cashier = 2,
+        Customer = 3
+    }
 }

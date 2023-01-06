@@ -17,6 +17,7 @@ namespace PG.Core.Service
     {
         private IDishRepository _dishRepository;
         private IFileStorageService _fileStorageService;
+
         #region Constructor
         public DishService(IDishRepository dishRepository, IServiceProvider serviceProvider, IFileStorageService fileStorageService) : base(dishRepository, serviceProvider)
         {
@@ -26,6 +27,33 @@ namespace PG.Core.Service
         #endregion
 
         #region Method
+        /// <summary>
+        /// Lấy dữ liệu paging
+        /// </summary>
+        /// <returns>Danh sách bản ghi</returns>
+        public override object GetPagingData(PagingParam param)
+        {
+            //Lấy dữ liệu về
+            var dishes = _dishRepository.GetEntitiesFilter(param);
+            dishes.ToList().ForEach(x =>
+            {
+                x.dish_img = _fileStorageService.GetFileAsync(StorageFileType.DishImage, x.dish_id.ToString());
+            });
+
+            //Lấy tổng số bản ghi
+            var totalRecord = _dishRepository.GetTotalFilters(param);
+
+            //Dữ liệu trả về
+            var data = new
+            {
+                TotalRecord = totalRecord,
+                TotalPage = param.PageSize != 0 ? Math.Ceiling((decimal)((decimal)totalRecord / param.PageSize)) : 1,
+                data = dishes
+            };
+
+            return data;
+        }
+
         /// <summary>
         /// Thêm mới một bản ghi
         /// </summary>
@@ -97,6 +125,25 @@ namespace PG.Core.Service
             }
 
             return dish;
+        }
+
+        /// <summary>
+        /// Lấy toàn bộ bản ghi
+        /// </summary>
+        /// <returns>List bản ghi lấy được</returns>
+        public override IEnumerable<Dish> GetEntities()
+        {
+            var dishes = _dishRepository.GetEntities();
+
+            dishes.ToList().ForEach(dish =>
+            {
+                if (dish != null)
+                {
+                    dish.dish_img = _fileStorageService.GetFileAsync(StorageFileType.DishImage, dish.dish_id.ToString());
+                }
+            });
+
+            return dishes;
         }
         #endregion
     }

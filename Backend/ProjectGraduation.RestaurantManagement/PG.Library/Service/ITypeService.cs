@@ -35,6 +35,6 @@ namespace PG.Library.Service
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        List<PropertyInfo> GetKeyFields(Type type);
+        List<PropertyInfo>? GetKeyFields(Type type);
     }
 }

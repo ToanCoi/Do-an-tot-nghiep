@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "leyMxoVDgdRcHq5l6x9fIWIMkgjneFRPdT0hpHjha3FXc7ZnvS4fSINVwWN+k07yDhpZ6JKKjbQ75TNFgH8Y1Q==",
+  "dgSpecHash": "AqZ3yy1fTDrNc82XXGc7pAR8QSNBCSLxRcc90oxNg7G03C4xYOy1m4uNq5KHCBgRIq/9wVqMMF1bEW4q2R1A7g==",
   "success": true,
   "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Infrastructure\\PG.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MY PC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

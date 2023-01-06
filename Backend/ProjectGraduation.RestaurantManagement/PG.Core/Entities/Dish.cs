@@ -24,7 +24,7 @@ namespace PG.Core.Entities
         [Required]
         [Unique]
         [DisplayName("Tên món")]
-        public string? dish_name { get; set; }
+        public string dish_name { get; set; }
 
 
         /// <summary>
@@ -48,7 +48,6 @@ namespace PG.Core.Entities
         /// <summary>
         /// Mô tả
         /// </summary>
-        [Required]
         [DisplayName("Mô tả")]
         public string? description { get; set; }
 

@@ -12,5 +12,6 @@ namespace PG.Core.Entities
         public int CurrentPage { get; set; }
         public string? FilterValue { get; set; }
         public string? FilterColumn { get; set; }
+        public string? Sort { get; set; }
     }
 }

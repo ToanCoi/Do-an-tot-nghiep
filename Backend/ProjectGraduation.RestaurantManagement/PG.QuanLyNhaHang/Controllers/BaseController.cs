@@ -16,16 +16,13 @@ namespace PG.API.Controllers
     [ApiController]
     public class BaseController<TEntity> : ControllerBase
     {
-        #region Declare
         IBaseService<TEntity> _baseService;
-        #endregion
 
-        #region Constructor
         public BaseController(IBaseService<TEntity> baseService)
         {
             _baseService = baseService;
         }
-        #endregion
+
 
         #region Method
         /// <summary>
@@ -141,7 +138,7 @@ namespace PG.API.Controllers
         /// <param name="entity">Đối tượng với thông tin cần sửa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
         [EnableCors("AllowCROSPolicy")]
-        [HttpPut("{Id}")]
+        [HttpPut]
         public virtual IActionResult Put(TEntity entity)
         {
             var serviceResult = _baseService.UpdateEntity(entity);
