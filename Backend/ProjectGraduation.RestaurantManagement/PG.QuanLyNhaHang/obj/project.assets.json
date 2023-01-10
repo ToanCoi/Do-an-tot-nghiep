@@ -425,6 +425,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Newtonsoft.Json": "13.0.2",
           "PG.Storage": "1.0.0"
         },
         "compile": {

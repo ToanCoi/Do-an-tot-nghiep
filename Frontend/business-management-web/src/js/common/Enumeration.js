@@ -2,8 +2,14 @@ var Enumeration = Enumeration || {};
 
 // Trạng thái của bàn
 Enumeration.TableStatus = {
+    Active: 0,
+    Broken: 1,
+}
+
+// Trạng thái đặt của bàn
+Enumeration.TableOrderStatus = {
     New: 0,
-    InProgress: 1,
+    InProgress: 1
 }
 
 // Trạng thái món ăn
@@ -18,6 +24,23 @@ Enumeration.DishType = {
     MainDish: 1, // Món chính
     Dessert: 2, // Món tráng miệng
     Drink: 4,
+}
+
+/**
+ * Thời gian thống kê
+ */
+Enumeration.TimeStatistic = {
+    Week: 0,
+    Month: 1,
+    Quarter: 2,
+    Year: 3
+}
+
+Enumeration.Role = {
+    Manager: 0,
+    Employee: 1,
+    Cashier: 2,
+    Customer: 3
 }
 
 //Giới tính
@@ -36,7 +59,7 @@ Enumeration.WorkStatus = {
 
 //Các chế độ của form
 Enumeration.FormMode = {
-    Add: 1, 
+    Add: 1,
     Edit: 2,
     Delete: 3,
     Clone: 4,

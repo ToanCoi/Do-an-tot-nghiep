@@ -1,3 +1,4 @@
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\appsettings.Development.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\appsettings.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\PG.API.File.exe
@@ -14,7 +15,6 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\Microsoft.OpenApi.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\obj\Debug\net6.0\PG.API.File.csproj.AssemblyReference.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.API.File\obj\Debug\net6.0\PG.API.File.GeneratedMSBuildEditorConfig.editorconfig

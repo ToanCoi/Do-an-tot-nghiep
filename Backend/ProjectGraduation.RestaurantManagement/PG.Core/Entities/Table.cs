@@ -38,9 +38,9 @@ namespace PG.Core.Entities
         public int? max_size { get; set; }
 
         /// <summary>
-        /// Số ghế tối đa
+        /// Trạng thái: 1-hỏng, 0-đang sử dụng
         /// </summary>
-        [DisplayName("Số ghế")]
+        [DisplayName("Trạng thái")]
         public int table_status { get; set; }
     }
 }

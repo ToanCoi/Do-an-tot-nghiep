@@ -14,6 +14,7 @@ export const useRestaurantOrderFormData = () => {
             height: "30px",
             inputType: "text",
             maxLength: 50,
+            isRequired: true,
         },
         customerPhoneInput: {
             inputFieldName: "customer_phone",
@@ -22,6 +23,7 @@ export const useRestaurantOrderFormData = () => {
             height: "30px",
             dataType: "Number",
             maxLength: 20,
+            isRequired: true,
         },
         showForm: false,
         showConfirmPopup: false,

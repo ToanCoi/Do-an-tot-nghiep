@@ -30,20 +30,38 @@ namespace PG.Library.Service
 
         public List<string> GetTableColumns(Type type)
         {
-            if(type == null)
+            
+            if (type == null)
             {
                 return null;
             }
 
             var columns = new List<string>();
-            foreach ( var p in type.GetProperties())
+            var prs = type.GetProperties();
+
+            
+            foreach ( var p in prs)
             {
+
                 // Loại ignoreField
                 var ignore = p.GetCustomAttribute<IgnoreField>(true);
-                if (ignore == null)
+                if (ignore != null)
                 {
-                    columns.Add(p.Name);
+                    continue;
                 }
+
+                // k update cha
+                if (((Exact)Attribute.GetCustomAttribute(type, typeof(Exact)))?.exact == true)
+                {
+                    var parent = p.GetCustomAttribute<ChildNotUpdate>(true);
+
+                    if(parent != null)
+                    {
+                        continue;
+                    }
+                }
+
+                columns.Add(p.Name);
             }
 
             return columns;

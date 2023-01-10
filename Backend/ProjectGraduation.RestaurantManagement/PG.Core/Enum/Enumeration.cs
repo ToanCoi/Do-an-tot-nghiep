@@ -29,7 +29,7 @@ namespace PG.Core.Enum
     }
 
     /// <summary>
-    /// Trạng thái entity
+    /// Role người dùng
     /// </summary>
     public enum Role
     {
@@ -37,5 +37,16 @@ namespace PG.Core.Enum
         Employee = 1,
         Cashier = 2,
         Customer = 3
+    }
+
+    /// <summary>
+    /// Thời gian lấy thống kê
+    /// </summary>
+    public enum TimeStatistic
+    {
+        Week = 0,
+        Month = 1,
+        Quarter = 2,
+        Year = 3
     }
 }

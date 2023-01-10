@@ -1,0 +1,29 @@
+.home {
+    .home-label {
+        font-size: 20px;
+    }
+
+    .home__statistic-filter {
+        display: flex;
+        align-items: center;
+    }
+
+    .home__chart {
+        display: flex;
+
+        .chart__revenue {
+            .bar__chart {
+                width: calc(50vw - var(--nav-width) - 20px);
+                height: 500px;
+            }
+
+        }
+
+        .chart__dish {
+            .pie__chart {
+                width: calc(50vw - var(--nav-width) - 20px);
+                height: 500px;
+            }
+        }
+    }
+}

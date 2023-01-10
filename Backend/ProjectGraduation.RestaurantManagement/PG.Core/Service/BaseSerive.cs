@@ -158,7 +158,7 @@ namespace PG.Core.Service
         }
 
         /// <summary>
-        /// Hàm lấy bản ghi theo property - cho frontend dùng
+        /// Hàm lấy bản ghi theo property
         /// </summary>
         /// <param name="propName">Tên trường cần kiểm tra</param>
         /// <param name="value">Giá trị của thuộc tính</param>

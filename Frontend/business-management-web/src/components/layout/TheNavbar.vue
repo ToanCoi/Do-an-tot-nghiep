@@ -22,6 +22,7 @@
         <router-link
           v-for="(item, index) in customData"
           :key="index"
+          v-show="item.role.includes(currentUser.role)"
           :customData="item.itemName"
           :to="item.routerLink"
           class="nav__list-item"
@@ -64,6 +65,7 @@ export default {
     return {
       smallNav: false,
       currentHoverMenu: null,
+      currentUser: this.$store.getters.user,
     };
   },
   created() {},

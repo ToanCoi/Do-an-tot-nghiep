@@ -43,6 +43,12 @@ namespace PG.API
             //Storage
             services.AddSingleton<IFileStorageService, FileStorageService>();
 
+            // user
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+
             //Employee
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
@@ -61,6 +67,13 @@ namespace PG.API
 
             //OrderDish
             services.AddScoped<IOrderDishRepository, OrderDishRepository>();
+
+            //Invoice
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            services.AddScoped<IInvoiceService, InvoiceService>();
+
+            //Statistic
+            services.AddScoped<IStatisticService, StatisticService>();
 
             //Department
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();

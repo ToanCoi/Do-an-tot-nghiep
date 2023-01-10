@@ -13,6 +13,11 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNh
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\refint\PG.Infrastructure.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\DoAn.QuanLyNhaHang\DoAn.Infrastructure\obj\Debug\net6.0\ref\PG.Infrastructure.dll
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.csproj.AssemblyReference.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.AssemblyInfoInputs.cache
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.AssemblyInfo.cs
+E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.csproj.CoreCompileInputs.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Infrastructure.deps.json
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Infrastructure.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Infrastructure.pdb
@@ -22,11 +27,6 @@ E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGradua
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Core.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Library.pdb
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\bin\Debug\net6.0\PG.Storage.pdb
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.csproj.AssemblyReference.cache
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.AssemblyInfoInputs.cache
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.AssemblyInfo.cs
-E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.csproj.CoreCompileInputs.cache
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.csproj.CopyComplete
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\PG.Infrastructure.dll
 E:\OneDrive - ptit.edu.vn\4th year - last\Do-an-tot-nghiep\Backend\ProjectGraduation.RestaurantManagement\PG.Infrastructure\obj\Debug\net6.0\refint\PG.Infrastructure.dll

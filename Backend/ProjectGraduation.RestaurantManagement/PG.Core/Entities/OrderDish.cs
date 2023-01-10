@@ -23,19 +23,19 @@ namespace PG.Core.Entities
         public Guid dish_id { get; set; }
 
         /// <summary>
-        /// Id dish
+        /// Id order
         /// </summary>
-        public Guid invoice_id { get; set; }
-
-        /// <summary>
-        /// Id dish
-        /// </summary>
-        public Guid table_reservation_id { get; set; }
+        public Guid order_id { get; set; }
 
         /// <summary>
         /// Số lượng/món
         /// </summary>
         public int quantity { get; set; }
+
+        /// <summary>
+        /// Giá lúc khách mua
+        /// </summary>
+        public decimal current_price { get; set; }
 
     }
 }

@@ -21,13 +21,17 @@ namespace PG.Core.Entities
         /// <summary>
         /// Id Bàn
         /// </summary>
-        public Guid? table_id { get; set; }
+        public Guid table_id { get; set; }
 
         /// <summary>
-        /// Những món ăn đặt trong order
+        /// Id dish
         /// </summary>
-        [IgnoreField]
-        public List<DishDtoEdit> dishes { get; set; }
+        public Guid? table_reservation_id { get; set; }
+
+        /// <summary>
+        /// Id dish
+        /// </summary>
+        public Guid? invoice_id { get; set; }
 
         /// <summary>
         /// Tên khách hàng
@@ -42,12 +46,12 @@ namespace PG.Core.Entities
         /// <summary>
         /// Thời gian order
         /// </summary>
-        [Required]
-        public DateTime order_time { get; set; }
+        public DateTime? order_time { get; set; }
 
         /// <summary>
         /// Đã thanh toán chưa
         /// </summary>
         public bool? paid { get; set; }
+
     }
 }

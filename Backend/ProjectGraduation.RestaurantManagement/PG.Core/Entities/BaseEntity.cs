@@ -25,6 +25,21 @@ namespace PG.Core.Entities
     [AttributeUsage(AttributeTargets.Property)]
     public class IgnoreField : Attribute { }
 
+    /// <summary>
+    /// Đánh dấu là chỉ update chính entity này, k lấy cha
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class)]
+    public class Exact : Attribute 
+    {
+        public bool exact { get; set; }
+    }
+
+    /// <summary>
+    /// Đánh dấu là con k insert/update field này
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ChildNotUpdate : Attribute { }
+
     public class BaseEntity
     {
         /// <summary>

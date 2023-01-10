@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KDD6Vu6Y6VeEJPG5F0mHYfrjGHysrZC+fR3EWwpqYgCCSj4EsOkkZyuI+H846MUZyUjIcAYFiZL4Wsi1b97Scg==",
+  "dgSpecHash": "VxJPZgEMRKNmAN6fQ5rPYJzkj7CWo7kuXIsq+2pBVzuS5pVy3/qYvhtMP0nJ/UtMV2kHNqs/ydxII3ZSS4u6sA==",
   "success": true,
   "projectFilePath": "E:\\OneDrive - ptit.edu.vn\\4th year - last\\Do-an-tot-nghiep\\Backend\\ProjectGraduation.RestaurantManagement\\PG.Core\\PG.Core.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.0\\microsoft.aspnetcore.cryptography.keyderivation.6.0.0.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\MY PC\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\MY PC\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []

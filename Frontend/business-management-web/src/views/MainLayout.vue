@@ -45,6 +45,7 @@ import Loader from "../components/Loader.vue";
 import ToastMessage from "../components/ToastMessage.vue";
 import BasePopup from "../components/BasePopup.vue";
 import Resource from "../js/common/Resource";
+import Enumeration from "../js/common/Enumeration";
 
 export default {
   name: "MainLayout",
@@ -58,59 +59,74 @@ export default {
   data() {
     return {
       Resource: Resource,
+      Enumeration: Enumeration,
       smallNav: false,
       overlayShow: false,
       errorPopupData: {},
       navbarData: [
         {
+          iconClass: "nav__icon-report",
+          itemName: "Báo cáo",
+          routerLink: "/home",
+          role: [Enumeration.Role.Manager],
+        },
+        {
           iconClass: "nav__icon-sale",
           itemName: "Bán hàng",
           routerLink: "/sell",
+          role: [
+            Enumeration.Role.Manager,
+            Enumeration.Role.Cashier,
+            Enumeration.Role.Employee,
+          ],
         },
         {
           iconClass: "nav__icon-dashboard",
           itemName: "Nhân viên",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-cash",
           itemName: "Tiền mặt",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-deposit",
           itemName: "Tiền gửi",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-invoice",
           itemName: "Quản lý hóa đơn",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-stock",
           itemName: "Kho",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-assets",
           itemName: "Tài sản",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-tools",
           itemName: "Thiết lập",
           routerLink: "/setup",
-        },
-        {
-          iconClass: "nav__icon-report",
-          itemName: "Báo cáo",
-          routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
         {
           iconClass: "nav__icon-finance",
           itemName: "Phân tích tài chính",
           routerLink: "",
+          role: [Enumeration.Role.Manager],
         },
       ],
     };

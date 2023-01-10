@@ -50,6 +50,13 @@ namespace PG.Core.Interface.Repository
         /// <returns>Một bản ghi có property và value truyền vào</returns>
         TEntity GetEntityByProperty(string propName, string propValue);
 
+        /// <summary>
+        /// Hàm lấy nhiều bản ghi theo property
+        /// </summary>
+        /// <param name="propName">Tên trường cần kiểm tra</param>
+        /// <param name="value">Giá trị của thuộc tính</param>
+        /// <returns>Một bản ghi có property và value truyền vào</returns>
+        IEnumerable<TEntity> GetEntitiesByProperty(string propName, string propValue);
 
         /// <summary>
         /// Thêm mới một bản ghi
@@ -73,11 +80,26 @@ namespace PG.Core.Interface.Repository
         int UpdateEntity(TEntity entity);
 
         /// <summary>
+        /// Sửa thông tin một bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        int UpdateEntity(TEntity entity, Type type);
+
+        /// <summary>
         /// Xóa một bản ghi theo Id
         /// </summary>
         /// <param name="Id">Id của bản ghi cần xóa</param>
         /// <returns>Số dòng bị ảnh hưởng</returns>
         int DeleteEntity(Guid Id);
+
+        /// <summary>
+        /// Hàm xoá nhiều bản ghi theo property
+        /// </summary>
+        /// <param name="propName">Tên trường cần kiểm tra</param>
+        /// <param name="value">Giá trị của thuộc tính</param>
+        /// <returns>Một bản ghi có property và value truyền vào</returns>
+        int DeleteEntities(string propName, string propValue);
 
         /// <summary>
         /// Xóa nhiều bản ghi theo Id

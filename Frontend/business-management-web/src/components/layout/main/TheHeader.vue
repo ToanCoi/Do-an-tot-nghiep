@@ -20,10 +20,10 @@
       <div class="page-icon">
         <div class="header__icon-notify"></div>
       </div>
-      <div class="header__user">
+      <div class="header__user" @click="showManagerAccount = true">
         <div class="header__icon-user"></div>
-        <div class="user__name text-semibold">Nguyễn Văn Toàn</div>
-        <div class="page-icon" @click="showManagerAccount = true">
+        <div class="user__name text-semibold">{{ currentUser.user_name }}</div>
+        <div class="page-icon">
           <div class="header__icon-user-menu"></div>
         </div>
         <div
@@ -57,6 +57,7 @@ export default {
         height: "32px",
       },
       showManagerAccount: false,
+      currentUser: this.$store.getters.user
     };
   },
   mounted() {
@@ -108,7 +109,7 @@ export default {
       localStorage.clear();
 
       this.$router.push({ name: "Login" });
-    }
+    },
   },
 };
 </script>

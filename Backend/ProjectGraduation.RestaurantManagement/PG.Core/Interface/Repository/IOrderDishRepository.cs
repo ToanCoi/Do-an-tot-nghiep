@@ -1,4 +1,5 @@
-﻿using PG.Core.Entities;
+﻿using PG.Core.Dto;
+using PG.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -73,7 +73,7 @@
                 <div class="form-item">
                   <FieldInputLabel
                     MustValidate="true"
-                    :saveValidate="true"
+                    :saveValidate="dataForm.saveValidate"
                     :customData="dataForm.customerNameInput"
                     :model="dataForm.orderData.customer_name"
                     @invalidData="invalidData"
@@ -85,7 +85,7 @@
                 <div class="form-item">
                   <FieldInputLabel
                     MustValidate="true"
-                    :saveValidate="true"
+                    :saveValidate="dataForm.saveValidate"
                     :customData="dataForm.customerPhoneInput"
                     :model="dataForm.orderData.customer_phone"
                     @invalidData="invalidData"
@@ -145,7 +145,7 @@
               </tr>
               <tr
                 class="row-summary"
-                v-if="dataForm.orderData.dishes.length > 0"
+                v-if="dataForm.orderData.dishes?.length > 0"
               >
                 <td class="text-bold pl-1">Tổng:</td>
                 <td></td>
@@ -176,16 +176,16 @@
           <div
             class="btn btn-primary text-semibold"
             tabindex="0"
-            @click="orderDish"
-            @keyup.enter="orderDish"
+            @click="saveOrder"
+            @keyup.enter="saveOrder"
           >
             Đặt món
           </div>
           <div
             class="btn btn-primary text-semibold"
             tabindex="0"
-            @click="paidDish"
-            @keyup.enter="paidDish"
+            @click="paidOrder"
+            @keyup.enter="paidOrder"
           >
             Thanh toán
           </div>
@@ -194,7 +194,12 @@
     </div>
   </form>
 
-  <restaurant-sell-invoice-vue ref="Invoice" ></restaurant-sell-invoice-vue>
+  <restaurant-sell-invoice-vue
+    ref="Invoice"
+    @refreshTables="$emit('refreshData')"
+    @refreshData="closeForm()"
+    @openOrderForm="dataForm.showForm = true"
+  ></restaurant-sell-invoice-vue>
 </template>
 
 <script>
@@ -220,8 +225,8 @@ export default {
     const currentDishType = ref(1);
     const summaryMoney = computed(() => {
       let res = 0;
-      if (dataForm.orderData.dishes.length > 0) {
-        res = dataForm.orderData.dishes.reduce(
+      if (dataForm.orderData.dishes?.length > 0) {
+        res = dataForm.orderData.dishes?.reduce(
           (sum, x) => (sum += x.price * x.quantity),
           res
         );
@@ -258,11 +263,36 @@ export default {
     function openForm(table) {
       proxy.getDishes();
       dataForm.orderData.table_id = table.table_id;
-      
+      dataForm.formType = Enumeration.FormMode.Add;
+
+      if (table.table_order_status == Enumeration.TableOrderStatus.InProgress) {
+        OrderAPI.getOrder(table.order_id)
+          .then((res) => {
+            if (res.status == 200) {
+              dataForm.formType = Enumeration.FormMode.Edit;
+
+              Object.assign(dataForm.orderData, res.data);
+            } else {
+              //Nếu không lấy được dữ liệu từ db
+              dataForm.allInputValid = false;
+              dataForm.errorMessage = Resource.Message.ServerError;
+              dataForm.showErrorPopup = true;
+            }
+          })
+          .catch((ex) => {
+            //Nếu không lấy được dữ liệu từ db
+            dataForm.allInputValid = false;
+            dataForm.errorMessage = Resource.Message.ServerError;
+            dataForm.showErrorPopup = true;
+          });
+      }
       dataForm.showForm = true;
     }
 
     function closeForm() {
+      dataForm.orderData = {
+        dishes: []
+      };
       dataForm.showForm = false;
     }
 
@@ -293,34 +323,145 @@ export default {
     }
 
     /**
+     * Hàm update dữ liệu khi người dùng thay đổi
+     */
+    function updateValueInput(key, value) {
+      dataForm.orderData[key] = value;
+    }
+
+    /**
      * Đặt món
      */
-    function orderDish() {
-      proxy.$refs.Invoice.openForm();
+    function saveOrder() {
+      proxy.$store.commit("SHOW_LOADER", true);
 
-      // OrderAPI.insert(dataForm.orderData)
-      //   .then((response) => {
-      //     if (response.data.code == 200) {
-      //       //Hiển thị toast message
-      //       proxy.$store.commit("SHOW_TOAST", {
-      //         toastType: Resource.Toast.Success,
-      //         toastMessage: Resource.Message.AddSuccess,
-      //       });
-      //     }
+      switch (dataForm.formType) {
+        //Nếu là form thêm
+        case Enumeration.FormMode.Add:
+          OrderAPI.insertOrder(dataForm.orderData)
+            .then((response) => {
+              proxy.$store.commit("SHOW_LOADER", false);
 
-      //     dataForm.tableData = {};
-      //     proxy.$emit("refreshData");
-      //   })
-      //   .catch((e) => {
-      //     proxy.$store.commit("SHOW_LOADER", false);
+              if (response.data.code == 200) {
+                //Hiển thị toast message
+                proxy.$store.commit("SHOW_TOAST", {
+                  toastType: Resource.Toast.Success,
+                  toastMessage: Resource.Message.AddSuccess,
+                });
+              }
 
-      //     //Nếu không lưu được thì thông báo lỗi
-      //     dataForm.allInputValid = false;
-      //     dataForm.errorMessage = e.response.data.data.status[0]
-      //       ? e.response.data.data.status[0]
-      //       : Resource.Message.ServerError;
-      //     dataForm.showErrorPopup = true;
-      //   });
+              dataForm.tableData = {};
+              proxy.$emit("refreshData");
+
+              proxy.closeForm();
+            })
+            .catch((e) => {
+              proxy.$store.commit("SHOW_LOADER", false);
+
+              //Nếu không lưu được thì thông báo lỗi
+              dataForm.allInputValid = false;
+              dataForm.errorMessage = e.response.data.data.status[0]
+                ? e.response.data.data.status[0]
+                : Resource.Message.ServerError;
+              dataForm.showErrorPopup = true;
+            });
+          break;
+        case Enumeration.FormMode.Edit:
+          OrderAPI.updateOrder(dataForm.orderData)
+            .then((response) => {
+              proxy.$store.commit("SHOW_LOADER", false);
+
+              if (response.data.code == 200) {
+                //Hiển thị toast message
+                proxy.$store.commit("SHOW_TOAST", {
+                  toastType: Resource.Toast.Success,
+                  toastMessage: Resource.Message.EditSuccess,
+                });
+              }
+
+              dataForm.tableData = {};
+              proxy.$emit("refreshData");
+
+              proxy.closeForm();
+            })
+            .catch((e) => {
+              proxy.$store.commit("SHOW_LOADER", false);
+
+              //Nếu không lưu được thì thông báo lỗi
+              dataForm.allInputValid = false;
+              dataForm.errorMessage = e.response.data.data.status[0]
+                ? e.response.data.data.status[0]
+                : Resource.Message.ServerError;
+              dataForm.showErrorPopup = true;
+            });
+          break;
+      }
+    }
+
+    async function paidOrder() {
+      dataForm.saveValidate = true;
+
+      await validateAll();
+
+      if (dataForm.allInputValid) {
+        proxy.$refs.Invoice.openForm(dataForm.orderData);
+
+        dataForm.showForm = false;
+      }
+    }
+
+    /**
+     * Hàm validate tất cả dữ liệu trước khi thêm
+     */
+    async function validateAll() {
+      //Reset
+      dataForm.allInputValid = true;
+      dataForm.allUniue = true;
+
+      //Lấy tất cả trường cần validate
+      let elValidate = proxy.$refs.FormData.querySelectorAll("[MustValidate]");
+
+      //Validate tất cả trường
+      for (let i = 0; i < elValidate.length; i++) {
+        await elValidate[i].querySelector(".field-input").focus();
+        await elValidate[i].querySelector(".field-input").blur();
+      }
+
+      // await this.checkUnique("EmployeeCode", this.employee.employeeCode);
+
+      // if (!this.allUniue) {
+      //   let errorMessage = CommonFn.getUniqueErrorMsg(
+      //     "Mã nhân viên <" + this.employee.employeeCode + ">"
+      //   );
+
+      //   await this.invalidData(errorMessage, Enumeration.ErrorType.Unique);
+      // }
+    }
+
+    /**
+     * Đánh dấu dữ liệu chưa hợp lệ
+     */
+    function invalidData(errorMessage, typeError) {
+      dataForm.allInputValid = false;
+
+      //Nếu là ấn nút save và chưa có lỗi nào trước đó thì lấy lỗi đầu tiên để hiển thị
+      if (!dataForm.errorMessage && dataForm.saveValidate) {
+        dataForm.errorMessage = errorMessage;
+
+        //Tùy vào các loại lỗi thì hiển thị popup tương ứng
+        switch (typeError) {
+          case Enumeration.ErrorType.Require:
+          case Enumeration.ErrorType.DataType:
+          case Enumeration.ErrorType.MaxLength:
+            dataForm.uniqueError = false;
+            break;
+          case Enumeration.ErrorType.Unique:
+            dataForm.uniqueError = true;
+            break;
+        }
+
+        dataForm.showErrorPopup = true;
+      }
     }
 
     return {
@@ -337,7 +478,11 @@ export default {
       addDish,
       removeDishItem,
       summaryMoney,
-      orderDish,
+      saveOrder,
+      updateValueInput,
+      paidOrder,
+      validateAll,
+      invalidData,
     };
   },
 };

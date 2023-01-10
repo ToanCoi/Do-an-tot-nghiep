@@ -66,11 +66,16 @@
         }
 
         .form__order {
-            background-color: $light-grey;
+            background-color: $white;
+
+            .form__customer {
+                background-color: $light-grey;
+            }
 
             .form__dish-order {
                 max-height: 400px;
                 overflow: auto;
+                background-color: $light-grey;
 
                 table {
                     width: 100%;

@@ -23,8 +23,6 @@ namespace PG.API.Controllers
             _baseService = baseService;
         }
 
-
-        #region Method
         /// <summary>
         /// Lấy tất cả bản ghi
         /// </summary>
@@ -50,7 +48,6 @@ namespace PG.API.Controllers
         /// </summary>
         /// <param name="Id">Id của bản ghi</param>
         /// <returns>Một đối tượng tìm được theo Id</returns>
-        /// CreateedBy: NVTOAN 24/06/2021
         [EnableCors("AllowCROSPolicy")]
         [HttpGet("{Id}")]
         public IActionResult Get([FromRoute] Guid Id)
@@ -209,6 +206,5 @@ namespace PG.API.Controllers
 
             return Ok(serviceResult);
         }
-        #endregion
     }
 }

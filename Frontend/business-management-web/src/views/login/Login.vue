@@ -49,6 +49,7 @@
 <script>
 import { getCurrentInstance, reactive } from "@vue/runtime-core";
 import AccountAPI from "../../api/views/login/AccountAPI";
+import Enumeration from "../../js/common/Enumeration";
 
 export default {
   setup: (props) => {
@@ -66,7 +67,11 @@ export default {
             proxy.$store.commit("changeToken", res.data.data.token ?? null);
             proxy.$store.commit("changeUser", res.data.data.user ?? null);
 
-            proxy.$router.push({ name: "Sell" });
+            if (res.data.data.user.role == Enumeration.Role.Manager) {
+              proxy.$router.push({ name: "Home" });
+            } else {
+              proxy.$router.push({ name: "Sell" });
+            }
           }
         })
         .catch((e) => {});
@@ -75,6 +80,7 @@ export default {
     return {
       loginApp,
       accountUser,
+      Enumeration,
     };
   },
 };

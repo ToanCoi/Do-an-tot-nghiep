@@ -65,7 +65,7 @@ export const store = createStore({
 
     changeUser(state, user) {
       localStorage.setItem('user', JSON.stringify(user));
-      state.token = user
+      state.user = user
     },
   },
   getters: {
@@ -94,7 +94,7 @@ export const store = createStore({
     },
 
     user: state => {
-      return state.user;
+      return state.user ?? JSON.parse(localStorage.getItem('user'));
     }
   },
 });

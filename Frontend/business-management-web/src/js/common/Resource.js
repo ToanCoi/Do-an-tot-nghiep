@@ -2,8 +2,14 @@ var Resource = Resource || {};
 
 // Trạng thái của bàn
 Resource.TableStatus = {
+    Active: "Đang sử dụng",
+    Broken: "Hỏng",
+}
+
+// Trạng thái đặt của bàn
+Resource.TableOrderStatus = {
     New: "Trống",
-    InProgress: "Đang phục vụ",
+    InProgress: "Đang hoạt động"
 }
 
 // Trạng thái món ăn
@@ -18,6 +24,16 @@ Resource.DishType = {
     MainDish: 'Món chính',
     Dessert: 'Món tráng miệng',
     Drink: "Nước uống",
+}
+
+/**
+ * Thời gian thôgns kê
+ */
+Resource.TimeStatistic = {
+    Week: "Tuần",
+    Month: "Tháng",
+    Quarter: "Quý",
+    Year: "Năm"
 }
 
 //Kiểu dữ liệu của cột trong grid

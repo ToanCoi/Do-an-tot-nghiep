@@ -19,16 +19,14 @@ namespace PG.Infrastructure.Repository
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        #region Declare
         IConfiguration _configuration;
         string _connectionString = string.Empty;
         protected IDbConnection _dbConnection = null;
         string _tableName = string.Empty;
         private readonly IServiceProvider _serviceProvider;
         private readonly ITypeService _typeService;
-        #endregion
 
-        #region Constructor
+
         public BaseRepository(IConfiguration configuration, IServiceProvider serviceProvider)
         {
             this._configuration = configuration;
@@ -39,7 +37,7 @@ namespace PG.Infrastructure.Repository
             _serviceProvider = serviceProvider;
             _typeService = _serviceProvider.GetRequiredService<ITypeService>();
         }
-        #endregion
+
 
         #region Method
         /// <summary>
@@ -62,6 +60,27 @@ namespace PG.Infrastructure.Repository
 
             return rowAffects;
                     
+        }
+
+        /// <summary>
+        /// Hàm xoá nhiều bản ghi theo property
+        /// </summary>
+        /// <param name="propName">Tên trường cần kiểm tra</param>
+        /// <param name="value">Giá trị của thuộc tính</param>
+        /// <returns>Một bản ghi có property và value truyền vào</returns>
+        public int DeleteEntities(string propName, string propValue)
+        {
+            int rowAffects = 0;
+
+            var param = new DynamicParameters();
+            param.Add($"{propName}", propValue);
+
+            string sql = $"DELETE FROM `{_tableName}` WHERE `{propName}` = @{propName}";
+
+            //Xóa 
+            rowAffects = _dbConnection.Execute(sql, param, commandType: CommandType.Text);
+
+            return rowAffects;
         }
 
         /// <summary>
@@ -284,6 +303,23 @@ namespace PG.Infrastructure.Repository
         }
 
         /// <summary>
+        /// Hàm lấy nhiều bản ghi theo property
+        /// </summary>
+        /// <param name="propName">Tên trường cần kiểm tra</param>
+        /// <param name="value">Giá trị của thuộc tính</param>
+        /// <returns>Một bản ghi có property và value truyền vào</returns>
+        public IEnumerable<TEntity> GetEntitiesByProperty(string propName, string propValue)
+        {
+            //Query string
+            string query = $"select * FROM {_tableName} where {propName} = '{propValue}'";
+
+            //Lấy entity
+            var entities = _dbConnection.QueryAsync<TEntity>(query).GetAwaiter().GetResult();
+
+            return entities;
+        }
+
+        /// <summary>
         /// Thêm mới một bản ghi
         /// </summary>
         /// <param name="entity">Đối tượng cần thêm mới</param>
@@ -370,6 +406,32 @@ namespace PG.Infrastructure.Repository
             var keyFields = _typeService.GetKeyFields(entity.GetType()).Select(x => x.Name).ToList();
             string keyName = keyFields?.FirstOrDefault();
             var columns = _typeService.GetTableColumns(entity.GetType()).Where(x => !keyFields.Contains(x));
+            entity.update_date = DateTime.Now;
+
+
+            var sql = new StringBuilder();
+            sql.Append($"UPDATE `{_tableName}` SET {string.Join(", ", columns.Select(n => $"`{n}` = @{n}"))} WHERE `{keyName}` = @{keyName}");
+
+
+            //Insert
+            rowAffects = _dbConnection.ExecuteAsync(sql.ToString(), entity, commandType: CommandType.Text).GetAwaiter().GetResult();
+
+            return rowAffects;
+        }
+
+        /// <summary>
+        /// Sửa thông tin một bản ghi
+        /// </summary>
+        /// <param name="Id">Id của bản ghi cần sửa</param>
+        /// <param name="entity">Đối tượng có những thông tin cần sửa</param>
+        /// <returns>Số dòng bị ảnh hưởng</returns>
+        public virtual int UpdateEntity(TEntity entity, Type type)
+        {
+            int rowAffects = 0;
+
+            var keyFields = _typeService.GetKeyFields(type).Select(x => x.Name).ToList();
+            string keyName = keyFields?.FirstOrDefault();
+            var columns = _typeService.GetTableColumns(type).Where(x => !keyFields.Contains(x));
             entity.update_date = DateTime.Now;
 
 

@@ -1,5 +1,44 @@
+@import '/src/assets/css/variable.scss';
+
 .invoice__form {
-    width: 100vw;
-    height: 100vh;
-    background-color: #fff;
+    .form__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .restaurant-name {
+            font-size: 20px;
+        }
+
+        .invoice-title {
+            font-size: 18px;
+        }
+
+        table {
+            border-collapse: collapse;
+            tr {
+                height: 30px;
+
+                &.row-summary {
+                    td {
+                        border: none;
+                    }
+                }
+            }
+
+            td {
+                border-bottom: 1px dashed $secondary;
+            }
+        }
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #print__content, #print__content * {
+        visibility: visible;
+    }
 }

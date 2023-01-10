@@ -17,24 +17,34 @@
           @click="openOrderForm(table)"
         >
           <div class="table-name">{{ table.table_name }}</div>
-          <div class="table-status">
+          <div class="table-status pt-1">
             <div
               class="circle-status mr-1"
               :class="{
                 active:
-                  table.table_status == Enumeration.TableStatus.InProgress,
+                  table.table_order_status ==
+                  Enumeration.TableOrderStatus.InProgress,
+                broken: table.table_status == Enumeration.TableStatus.Broken,
               }"
             ></div>
             <div class="status-text">
-              {{ CommonFn.getEnumValue(table.table_status, "TableStatus") }}
+              {{
+                getTextTableStatus(table.table_status, table.table_order_status)
+              }}
             </div>
+          </div>
+          <div
+            class="maxsize-text pt-1"
+            v-show="table.table_status != Enumeration.TableStatus.Broken"
+          >
+            {{ table.max_size }} ghế
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <restaurant-order-form ref="OrderForm"></restaurant-order-form>
+  <restaurant-order-form ref="OrderForm" @refreshData="refreshData"></restaurant-order-form>
 </template> 
 
 <script>
@@ -45,11 +55,12 @@ import Enumeration from "../../../js/common/Enumeration.js";
 import CommonFn from "../../../js/common/CommonFn.js";
 import TableAPI from "../../../api/views/setup/TableAPI";
 import RestaurantOrderForm from "./RestaurantOrderForm.vue";
+import OrderAPI from "../../../api/views/sell/OrderAPI";
 
 export default {
   components: {
     DxTabPanel,
-    RestaurantOrderForm
+    RestaurantOrderForm,
   },
 
   setup: (props) => {
@@ -67,7 +78,7 @@ export default {
      */
     function getTableData() {
       proxy.$store.commit("SHOW_LOADER", true);
-      TableAPI.getAll()
+      OrderAPI.getTables()
         .then((res) => {
           if (res.data && res.data.length > 0) {
             // Chia các bàn theo tầng
@@ -96,13 +107,34 @@ export default {
       proxy.$refs.OrderForm.openForm(table);
     }
 
+    /**
+     * Lấy tên hiển thị trạng thái bàn
+     */
+    function getTextTableStatus(tableStatus, tableOrderStatus) {
+      let str = "";
+
+      if (tableStatus == Enumeration.TableStatus.Broken) {
+        str = CommonFn.getEnumValue(tableStatus, "TableStatus");
+      } else {
+        str = CommonFn.getEnumValue(tableOrderStatus, "TableOrderStatus");
+      }
+
+      return str;
+    }
+
+    function refreshData() {
+      getTableData();
+    }
+
     return {
       menuTabItems,
       allTable,
       Enumeration,
       CommonFn,
       getTableData,
-      openOrderForm
+      openOrderForm,
+      getTextTableStatus,
+      refreshData
     };
   },
 };

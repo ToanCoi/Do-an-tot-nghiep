@@ -253,7 +253,6 @@ export default {
 
     /**
      * Hàm update dữ liệu khi người dùng thay đổi
-     * NVTOAN 06/07/2021
      */
     function updateValueInput(key, value) {
       dataForm.dishData[key] = value;
